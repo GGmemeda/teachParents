@@ -1,0 +1,36 @@
+<!--pages/my_info/index.wxml-->
+<view class="info_content" wx:if="{{studentsArr.length}}">
+  <view class="info_list" wx:for="{{studentsArr}}" wx:key>
+    <view class="il_center">
+      <view>
+        <text>{{item.name}}</text>
+        <text>{{item.sex}}</text>
+        <text></text>
+        <text>{{item.age}}岁</text>
+        <image class="closeaaa" 
+                mode="widthFix" 
+                data-id="{{item.id}}"
+                data-index="{{index}}"
+                src="/images/icon/close.png"
+                bindtap="delInfoList"></image>
+      </view>
+      <view class="border-b">
+        <text>身份证号：{{item.idCards}}</text>
+      </view>
+      <view>
+        <text>{{item.schoolName}}</text>
+      </view>
+      <view>
+        <text>{{item.gradeName}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 没有数据 -->
+<no-data wx:if="{{!studentsArr.length}}"></no-data>
+
+<!-- 绑定学生 -->
+<view class="binding">
+  <view class="cz angular" bindtap="toPage"><text>+</text> <text>绑定学生</text></view>
+</view>

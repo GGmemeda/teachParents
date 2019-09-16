@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/wanchengzuoye_det/index",
+    "pages/wanchengzuoye_video/index",
+    "pages/wanchengzuoye_images/index",
+    "pages/homework_type_video/index",
+    "pages/homework_type_images/index",
+    "pages/homework_type_text/index",
+    "pages/all_homework/index",
+    "pages/webview/index",
+    "pages/login_xieyi/index",
+    "pages/my_info/index",
+    "pages/getphone/index",
+    "pages/my/index",
+    "pages/my_help_center/index",
+    "pages/my_feedback_details/index",
+    "pages/my_feedback/index",
+    "pages/my_bill_details/index",
+    "pages/my_bill/index",
+    "pages/my_userinfo_username/index",
+    "pages/my_userinfo/index",
+    "pages/my_info_add/index",
+    "pages/index_details/index"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于匹配附近的小伙伴"
+    }
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#2CACFD",
+    "borderStyle": "black",
+    "color": "#C5C6C7",
+    "list": [
+      {
+        "iconPath": "images/icon/tabbar/index.png",
+        "selectedIconPath": "images/icon/tabbar/indexs.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/icon/tabbar/my.png",
+        "selectedIconPath": "images/icon/tabbar/mys.png",
+        "pagePath": "pages/my/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom",
+    "tab": "/components/tab/index",
+    "no-data": "/components/nodata/index"
+  },
+  "networkTimeout": {
+    "request": 20000
+  },
+  "sitemapLocation": "sitemap.json"
+}

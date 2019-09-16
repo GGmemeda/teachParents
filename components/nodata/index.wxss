@@ -1,0 +1,21 @@
+/* components/nodata/index.wxss */
+@import "/colorui/color.wxss";
+.xsimg {
+  width: 254rpx;
+  margin-bottom: 43rpx;
+  margin-top: 153rpx;
+}
+
+.xscontent {
+  color: rgba(26, 29, 30, .4);
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.nodatabind {
+  width: 360rpx;
+  margin-top: 58rpx;
+}

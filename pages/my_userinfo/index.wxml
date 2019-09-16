@@ -1,0 +1,33 @@
+<!--pages/my_userinfo/index.wxml-->
+<view class="userinfo">
+  <view class="center">
+    <view class="list border-b">
+      <text>头像</text>
+      <view>
+        <view class="icontent">
+          <image mode="aspectFill" src="{{userInfo.headPic}}"></image>
+        </view>
+        <!-- <image class="myr" mode="widthFix" src="/images/icon/to.png"></image> -->
+      </view>
+    </view>
+    <view class="list border-b" bindtap="toPage">
+      <text>用户名</text>
+      <view>
+        <view class="itext">
+          {{userInfo.name}}
+        </view>
+        <image class="myr" mode="widthFix" src="/images/icon/to.png"></image>
+      </view>
+    </view>
+    <view class="list border-b">
+      <text>绑定手机</text>
+      <view class="bindingphone">
+        <view class="itext">
+          {{userInfo.phone}}
+        </view>
+        <image class="myr" mode="widthFix" src="/images/icon/to.png"></image>
+        <!-- <button open-type="getPhoneNumber" bindgetphonenumber="bindgetphonenumber">getPhoneNumber</button> -->
+      </view>
+    </view>
+  </view>
+</view>

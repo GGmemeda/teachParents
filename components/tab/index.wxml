@@ -1,0 +1,9 @@
+<!--components/tab/index.wxml-->
+<view class="topnav">
+  <view wx:for="{{tabarr}}" 
+        data-id="{{index}}" 
+        bindtap="topnavFn" 
+        class="{{index == selectIndex ? 'active' : ''}}"
+        wx:key="{{index}}">{{item}}</view>
+  <!-- <view data-id="{{1}}" bindtap="topnavFn" class="{{navchange ? 'active' : ''}}">已缴费</view> -->
+</view>

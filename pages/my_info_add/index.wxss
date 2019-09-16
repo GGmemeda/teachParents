@@ -1,0 +1,100 @@
+/* pages/my_info_add/index.wxss */
+.angular {
+  box-shadow: 0 10rpx 10rpx 3rpx rgba(0, 155, 253, .2);
+  margin-top: 60rpx;
+}
+
+.bindingcontent {
+  padding: 0 32rpx;
+  background-color: #ffffff;
+}
+
+.bindlist {
+  height: 100rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 32rpx;
+  color: #484A4B;
+  position: relative;
+}
+
+.bindlist text {
+  width: 179rpx;
+}
+
+.bindlist input {
+  flex: 1;
+}
+
+.selecting {
+  width: 26rpx;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -12rpx;
+}
+
+.bindinfostu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .4);
+  z-index: 1000;
+}
+
+.bindinfostu .center {
+  text-align: center;
+  width: 500rpx;
+  height: 260rpx;
+  border-radius: 12rpx;
+  background-color: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -130rpx;
+  margin-left: -250rpx;
+}
+
+.bindinfostu .center > view:nth-child(1) {
+  font-size: 32rpx;
+  color: #000;
+  padding-top: 20rpx;
+}
+
+.bindinfostu .center > view:nth-child(2) {
+  font-size: 26rpx;
+  padding-top: 30rpx;
+}
+
+.bindinfostu .center > view:nth-child(3) {
+  height: 85rpx;
+  border-top: 1px solid #eee;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+.bindinfostu .center view:nth-child(3) .aaa {
+  flex: 1;
+  line-height: 85rpx;
+  position: relative;
+  color: #009bfd;
+}
+
+.bindinfostu .center view:nth-child(3) .aaa:first-child {
+  border-right: 1px solid #eee;
+}
+
+.lianxikefu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}

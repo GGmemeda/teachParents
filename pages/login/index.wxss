@@ -1,0 +1,70 @@
+/* pages/login/index.wxss */
+
+
+/* pages/getphone/index.wxss */
+/* pages/login/index.wxss */
+.logo {
+  width: 200rpx;
+  display: block;
+  margin: 0 auto;
+  vertical-align: top;
+}
+
+.logotext {
+  font-size: 46rpx;
+  color: #1A1D1E;
+  text-align: center;
+  font-weight: bold;
+  margin: 26rpx auto 310rpx auto;
+}
+
+.content {
+  height: 100vh;
+  background-color: #fff;
+}
+
+.xieyi {
+  color: rgba(44, 47, 48, .6);
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 38rpx;
+}
+
+.xieyi text {
+  color: rgba(0, 155, 253, .6);
+}
+
+.cz {
+  width: 580rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.shouquan {
+  display: flex;
+  justify-content: center;
+}
+
+.czs {
+  color: rgba(44, 47, 48, .6);
+  text-align: center;
+  padding: 38rpx 0 0 0;
+}
+
+.cz button {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.top1 {
+  padding-top: 140rpx;
+}
+
+.cz image {
+  width: 36rpx;
+  margin-right: 20rpx;
+}

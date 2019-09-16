@@ -1,0 +1,29 @@
+<!--pages/my_help_center/index.wxml-->
+<!-- 输入框 -->
+<view class="t1">
+  <textarea bindinput="textChange" value="{{val}}" maxlength="500" placeholder="请留下你的宝贵意见或建议，我们将努力改进"></textarea>
+  <view class="ct">{{lenText}}/500</view>
+</view>
+
+<view class="uploadimg">
+  <view class="tit">上传图片(最多5张)</view>
+  <view class="imgcontent">
+    <view class="addimg" 
+          data-index="{{index}}" 
+          bindtap="changeImg" 
+          wx:for="{{adviceImgList}}" 
+          wx:key="{{index}}" 
+          wx:if="{{index <= 4}}">
+      <image mode="aspectFill" wx:if="{{item.url}}" src="{{item.url}}"></image>
+      <text class="cloase" data-index="{{index}}" catchtap="deleteImg">×</text>
+    </view>
+    <view wx:if="{{![1,2,3,4].includes(adviceImgList.length) && adviceImgList.length < 5}}" class="addimg" bindtap="selectImg"></view>
+  </view>
+</view>
+
+<view class="cantactphone">
+  <text>联系电话</text>
+  <input placeholder="选填" value="{{phone}}" bindinput="changephone" type="number" maxlength="11"></input>
+</view>
+
+<view class="cz angular" bindtap="submitBack"><text>确定</text></view>

@@ -1,0 +1,20 @@
+<view class="content">
+  <!--pages/login/index.wxml-->
+  <view class="top1">
+    <image class="logo" mode="widthFix" src="/images/icon/logo.png"></image>
+    <view class="logotext">亿健通</view>
+  </view>
+
+
+  <view class="shouquan">
+    <view class="cz angular">
+      授权登录<button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">授权登录</button>
+    </view>
+  </view>
+
+  <view class="czs">
+    <text bindtap="cloase">取消</text>
+  </view>
+
+  <view class="xieyi">确认授权登录即表示你已同意<text bindtap="xieyi">《亿健通用户协议》</text></view>
+</view>

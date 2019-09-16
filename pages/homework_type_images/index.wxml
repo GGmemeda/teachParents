@@ -1,0 +1,8 @@
+<view class="content">
+  <textarea value="{{obj.content}}" maxlength="-1" auto-height="{{true}}" disabled="{{true}}"></textarea>
+  <image wx:for="{{obj.url}}" wx:key mode="widthFix" src="{{item}}"></image>
+</view>
+
+<view class="posi">
+  <view class="cz angular" bindtap="openUpload">上传图片</view>
+</view>

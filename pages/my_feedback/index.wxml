@@ -1,0 +1,25 @@
+<!--pages/my_feedback/index.wxml-->
+<view class="content">
+  <view class="ul">
+    <view class="li" bindtap="toPage" data-id="{{item.id}}" wx:for="{{helpList}}" wx:key>
+      <view class="cen border-b">
+        <text class="tshow">{{item.title}}</text>
+        <image class="myrs" mode="widthFix" src="/images/icon/to.png"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<no-data morentext="暂无数据！" wx:if="{{!helpList.length}}"></no-data>
+
+<view class="pofix">
+  <view class="f1" bindtap="callPhone">
+    <image mode="widthFix" src="/images/icon/phone_call.png"></image>
+    <text>联系客服</text>
+  </view>
+  <view class="f2"></view>
+  <button class="f1" open-type='contact'>
+    <image mode="widthFix" src="/images/icon/kefu2.png"></image>
+    <text>在线客服</text>
+  </button>
+</view>

@@ -1,0 +1,63 @@
+<!--pages/my/index.wxml-->
+<view class="userinfo">
+  <view class="usercenter" wx:if="{{userInfo.headPic}}">
+    <view class="l">
+      <image class="aimg" mode="aspectFill" src="{{userInfo.headPic}}"></image>
+    </view>
+    <view class="r">
+      <view class="rcontent">
+        <view class="rname">{{userInfo.name}}</view>
+        <view class="rbut" data-name="my_userinfo" bindtap="toPage">
+          <text class="rb_ts">编辑个人信息</text>
+          <image class="rb_tobu" mode="widthFix" src="/images/icon/to.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="usercenter" wx:if="{{!userInfo.headPic}}">
+    <view class="l">
+      <image class="aimg" mode="aspectFill" src="/images/icon/default.jpg"></image>
+    </view>
+    <view class="r" bindtap="toLogin">
+      <view class="rcontent">
+        <view class="rname">未登录</view>
+        <view class="rbut">
+          <text class="rb_ts">快去登录吧</text>
+          <image class="rb_tobu" mode="widthFix" src="/images/icon/to.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 底部栏目 -->
+<view class="mucontent">
+  <view class="mylist border-b" data-name="my_info" bindtap="toPage">
+    <view class="mul">
+      <image mode="widthFix" src="/images/icon/my1.png"></image>
+      <text>学生信息</text>
+    </view>
+    <image class="myr" mode="widthFix" src="/images/icon/to.png"></image>
+  </view>
+  <view class="mylist border-b" data-name="my_bill" bindtap="toPage">
+    <view class="mul">
+      <image mode="widthFix" src="/images/icon/my2.png"></image>
+      <text>我的账单</text>
+    </view>
+    <image class="myr" mode="widthFix" src="/images/icon/to.png"></image>
+  </view>
+  <view class="mylist border-b" data-name="my_help_center" bindtap="toPage">
+    <view class="mul">
+      <image mode="widthFix" src="/images/icon/my3.png"></image>
+      <text>意见反馈</text>
+    </view>
+    <image class="myr" mode="widthFix" src="/images/icon/to.png"></image>
+  </view>
+  <view class="mylist" data-name="my_feedback" bindtap="toPage">
+    <view class="mul">
+      <image mode="widthFix" src="/images/icon/my4.png"></image>
+      <text>帮助中心</text>
+    </view>
+    <image class="myr" mode="widthFix" src="/images/icon/to.png"></image>
+  </view>
+</view>

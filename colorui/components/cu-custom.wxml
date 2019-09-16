@@ -1,0 +1,28 @@
+<view class="cu-custom" style="height:calc({{windowIsBang ? 40 : 16}}px + 52px);">
+  <view class="cu-bar top_nav_bgc fixed {{bgImage!=''?'none-bg text-white bg-img':''}} {{bgColor}}" style="height:{{CustomBar}}px;padding-top:{{windowIsBang ? 40 : 16}}px;{{bgImage?'background-image:url(' + bgImage+')':''}}">
+    <view class="action" bindtap="BackPage" wx:if="{{isBack}}">
+      <text class="cuIcon-back" style='font-size:44rpx;'></text>
+      <slot name="backText"></slot>
+    </view>
+    <view class="action" bindtap="comeback" wx:if="{{comeback}}">
+      <text class="cuIcon-back" style='font-size:44rpx;'></text>
+      <slot name="backText"></slot>
+    </view>
+    <view class="action" bindtap="tobegin" wx:if="{{tobegin}}">
+      <text class="cuIcon-back" style='font-size:44rpx;'></text>
+      <slot name="backText"></slot>
+    </view>
+    <view class="action" bindtap="toSizer" wx:if="{{toSizer}}">
+      <text class="cuIcon-back" style='font-size:44rpx;'></text>
+      <slot name="backText"></slot>
+    </view>
+    <view class="action border-custom"  wx:if="{{isCustom}}" style="width:{{Custom.width}}px;height:{{Custom.height}}px;margin-left:calc(750rpx - {{Custom.right}}px)">
+      <text class="cuIcon-back" bindtap="BackPage"></text>
+      <text class="cuIcon-homefill" bindtap="toHome"></text>
+    </view>
+    <view class="content" style="top:{{StatusBar}}px">
+      <slot name="content"></slot>
+    </view>
+    <slot name="right"></slot>
+  </view>
+</view>

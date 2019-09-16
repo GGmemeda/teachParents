@@ -1,0 +1,103 @@
+.userinfo {
+  height: 200rpx;
+  padding: 0 32rpx 0 42rpx;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.cz {
+  width: 250rpx;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  height: 74rpx;
+}
+
+.cz button {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.usercenter {
+  height: 116rpx;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.usercenter .l {
+  width: 116rpx;
+  height: 100%;
+}
+
+.usercenter .l image {
+  width: 100%;
+  height: 100%;
+  border-radius: 12rpx;
+}
+
+.usercenter .r {
+  height: 100%;
+  flex: 1;
+}
+
+.rb_tobu {
+  width: 22rpx;
+}
+
+.rname {
+  font-size: 36rpx;
+  color: rgba(36, 42, 58, 1);
+  font-weight: bold;
+}
+
+.rb_ts {
+  font-size: 28rpx;
+  color: rgba(140, 141, 142, 1);
+}
+
+.rcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 5rpx 0 5rpx 36rpx;
+}
+
+.rbut {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mucontent {
+  background-color: #ffffff;
+  padding: 0 32rpx;
+  margin-top: 20rpx;
+}
+
+.mylist {
+  display: flex;
+  justify-content: space-between;
+  height: 100rpx;
+  align-items: center;
+}
+
+.mul {
+  display: flex;
+  align-items: center;
+}
+
+.mul image {
+  width: 33rpx;
+  margin-right: 28rpx;
+}
+
+.myr {
+  width: 22rpx;
+}

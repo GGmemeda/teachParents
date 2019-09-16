@@ -1,0 +1,94 @@
+/* pages/my_help_center/index.wxss */
+.t1 {
+  height: 400rpx;
+  background-color: #fff;
+  padding: 32rpx;
+}
+
+.t1 textarea {
+  width: 100%;
+  font-size: 32rpx;
+  height: 300rpx;
+}
+
+.t1 .ct {
+  text-align: right;
+  color: rgba(47, 52, 68, .6);
+  font-size: 32rpx;
+}
+
+.uploadimg {
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding: 0 32rpx;
+}
+
+.tit {
+  color: rgba(47, 52, 68, 1);
+  font-size: 32rpx;
+  padding-top: 32rpx;
+}
+
+.addimg image {
+  width: 100%;
+  height: 100%;
+}
+
+.addimg {
+  position: relative;
+  overflow: hidden;
+  border: 1rpx solid #bbbbbb;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 12rpx;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAABYCAYAAABxlTA0AAAAAXNSR0IArs4c6QAAA0lJREFUeAHt3c9rU0EQB/CdTRCU0qgIRUWakqp4EIpVakA8VbQIiocc/Uv0kKt/gPg/GBAvtkLqwYtQNLZGFPEHhF5607RgsD/eWze5pb4nw7STbHnf3PJ2Znb204G+yxIyB+Bz8drtY7nNrbvG0aQxrmPJvi8VR+u1Wi0Kvf186A1Oz1YKO+32Q2fciMfttRu5aPx7a33Cf3kSev829AY97h0P63H7P7GLpy5dnb3Q/zS8b8EDk6FSGlsU29S1tJxBPw8e2E/v4VQUFx9JXQtk4QAAByIlbAPAQjhuGoC5UsI4AAvhuGkA5koJ4wAshOOmAZgrJYwDsBCOmwZgrpQwDsBCOG4agLlSwjgAC+G4aQDmSgnjACyE46YBmCsljAOwEI6bBmCulDAOwEI4bhqAuVLCOAAL4bhpAOZKCeMALITjpgGYKyWMA7AQjpsGYK6UMA7AQjhuGoC5UsI4AAvhuGkA5koJ4wAshOOmAZgrJYwDsBCOmwZgrpQwDsBCOG4agLlSwjjq5s3MzI3+ibdvGaIJiin9ToRwk72k+etbY/6eRtog/CZjN/ZSf39z/d0nsr/I0sd7c+XX1Wo1pnL55vHOdvwg6arU/m6erWr+dlRz5V39ce7EydJ9j1vM1vEHctqx02cm16xz7vxAtsvgJi5y5yyR2czg2Qd0ZLtlyVFzQLtlbhuXi5u2MHLqOZFtZe70yge2hl6sLNW/9V7T/OuEffbyzRWKTJH+d3VVuamk8s6Zaf9P+FDSmn9FWzPkWklrw3pGzvy0Lv+p0Vj40e2hBzysZjj7Tl2+8ci/Cx9NjCXz6sPbxaeJa4E8THuBD6S9g98GgJX/hgAGsLKAcnlMMICVBZTLY4IBrCygXB4TDGBlAeXymGAAKwsol8cEA1hZQLk8JhjAygLK5THBAFYWUC6PCQawsoByeUwwgJUFlMtjggGsLKBcHhMMYGUB5fKYYAArCyiXxwQDWFlAuTwmGMDKAsrlMcEAVhZQLo8JBrBZTzWw1E5dC2Qh/Am29DnZilx+x31JXgvnafDAZ8cL8/4q1OpuMt/4fKOx+M/z3XHD/h78Na4uUKVSyX1d3bhOceR/9td2yOaWl5cWUiZ72KT9+/8FiGCKGbKQqzQAAAAASUVORK5CYII=") no-repeat center/44rpx;
+  margin-right: 72rpx;
+  margin-bottom: 32rpx;
+}
+
+.imgcontent {
+  padding: 60rpx 0 30rpx 0;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imgcontent .addimg:nth-child(3n) {
+  margin-right: 0;
+}
+
+.cantactphone {
+  display: flex;
+  height: 100rpx;
+  padding: 0 32rpx;
+  align-items: center;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.cantactphone > text {
+  color: rgba(36, 42, 58, 1);
+  font-size: 32rpx;
+  width: 180rpx;
+}
+
+.cantactphone input {
+  font-size: 32rpx;
+  color: #242A3A;
+  flex: 1;
+}
+
+.angular {
+  margin-top: 60rpx;
+}
+
+.cloase {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 38rpx;
+}

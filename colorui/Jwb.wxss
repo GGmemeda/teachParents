@@ -1,0 +1,13 @@
+.corDis{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 20rpx;
+  font-weight: bold;
+}
+.AllsoloFont{
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #666;
+  
+}

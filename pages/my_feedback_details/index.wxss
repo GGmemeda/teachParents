@@ -1,0 +1,12 @@
+.content {
+  background-color: #fff;
+  padding: 32rpx;
+  font-size: 32rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  color: #242728;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}

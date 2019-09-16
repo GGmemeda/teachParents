@@ -1,0 +1,28 @@
+<!--pages/my_bill_details/index.wxml-->
+<view class="content">
+  <view class="bill_det">
+    <view class="top1 border-b">
+      <image mode="widthFix" src="/images/icon/fanka.png"></image>
+      <view class="t1">{{obj.name}}</view>
+      <view class="t2">-{{obj.amount}}</view>
+    </view>
+  </view>
+  <view class="bill_list">
+    <view class="li">
+      <text>报名学生</text>
+      <text>{{obj.stuName}}</text>
+    </view>
+    <view class="li">
+      <text>支付时间</text>
+      <text>{{obj.time}}</text>
+    </view>
+    <view class="li">
+      <text>支付方式</text>
+      <text>{{obj.type}}</text>
+    </view>
+    <view class="li">
+      <text>交易单号</text>
+      <text>{{obj.orderId}}</text>
+    </view>
+  </view>
+</view>

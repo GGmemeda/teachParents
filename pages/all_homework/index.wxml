@@ -1,0 +1,62 @@
+<tab tabarr="{{tabArr}}" bind:changetab="pageTabFun"></tab>
+<view wx:if="{{!navTabIndex}}">
+  <!--pages/my_info/index.wxml-->
+  <view class="info_content">
+    <view class="info_list" wx:for="{{dongtai}}" wx:key="{{index}}">
+      <view class="il_center">
+        <view class="tp1">
+          <text>{{item.tltie}}</text>
+          <text>{{item.time}}</text>
+        </view>
+        <view class="tp2">
+          {{item.content}}
+        </view>
+        <view class="border-b border-b-s" wx:if="{{!item.workStatus}}"></view>
+        <view class="tp3" 
+              wx:if="{{!item.workStatus}}" 
+              bindtap="dongtaiOpenDetUrl"
+              data-type="{{item.type}}"
+              data-status="{{item.status}}"
+              data-workid="{{item.workId}}">
+          <view>查看详情</view>
+          <view class="tp3cen">
+            <text class="hd"></text>
+          </view>
+          <image class="to" src="/images/icon/to.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 没有数据 -->
+  <no-data wx:if="{{!dongtai.length}}" morentext="暂无作业动态"></no-data>
+</view>
+<view wx:if="{{navTabIndex}}">
+  <view class="ul">
+    <view class="li" wx:for="{{all}}" wx:key="{{index}}">
+      <view class="tit">{{item.date}}</view>
+      <view class="li2">
+        <view class="li2ss border-b">
+          <view class="l">
+            <view class="lt">{{item.tltie}}</view>
+            <view class="tm">{{item.time}}</view>
+          </view>
+          <view class="rs {{item.status ? 'rsb' : ''}}">
+            {{item.status ? '已完成' : '未完成'}}
+          </view>
+        </view>
+      </view>
+      <view class="li2">
+        <view class="li2ss">
+          <view class="l">
+            <view class="lt">这是作业标题</view>
+            <view class="tm">下午4点</view>
+          </view>
+          <view class="rs rsb">
+            已完成
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

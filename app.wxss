@@ -1,0 +1,13 @@
+/**app.wxss**/
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+@import "colorui/common.wxss";
+@import "colorui/Jwb.wxss";
+@import "colorui/color.wxss";
+page{
+  background: #F3F3F3;
+}
+
+.myrs {
+  width: 28rpx;
+}

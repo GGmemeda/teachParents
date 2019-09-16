@@ -1,0 +1,5 @@
+/* pages/login_xieyi/index.wxss */
+
+view {
+  text-align: justify
+}

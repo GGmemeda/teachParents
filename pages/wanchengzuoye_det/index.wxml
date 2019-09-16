@@ -1,0 +1,12 @@
+<view class="content">
+  <textarea value="{{obj.content}}" maxlength="-1" auto-height="{{true}}" disabled="{{true}}"></textarea>
+  <image mode="widthFix" src="{{obj.url}}"></image>
+</view>
+<view class="ts1" wx:if="{{obj.type}}">打卡详情</view>
+<view class="tcondn">
+  <view class="ts2">{{obj.des}}</view>
+  <view class="ts3">
+    <image class="image" wx:if="{{obj.type == 1}}" wx:for="{{obj.workUrl}}" wx:key mode="widthFix" src="{{item}}"></image>
+    <video src="{{item}}" class="image" wx:if="{{obj.type == 2}}" wx:for="{{obj.workUrl}}" wx:key></video>
+  </view>
+</view>

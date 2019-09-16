@@ -1,0 +1,107 @@
+<!-- <button open-type='contact'>联系客服</button> -->
+<!-- <tab tabarr="{{tabArray}}" bind:changetab="pageTabFun"></tab>
+<view wx:if="{{!navTabIndex}}">1</view>
+<view wx:if="{{navTabIndex}}">2</view> -->
+<view style="overflow: hidden;min-height: 100vh;background: #fff">
+  <!--pages/index/index.wxml-->
+  <view class="indebg">
+    <view class="topUser" wx:if="{{isStudentData}}">
+      <view class="avator" bindtap="openWin">
+        <image mode="aspectFill" class="img" src="/images/icon/default_avator.png"></image>
+        <image mode="aspectFill" class="qiehuan"src="/images/icon/qiehuan.png"></image>
+      </view>
+      <text class="name">{{selectStudentObj.name}}</text>
+    </view>
+    <view class='swiper-out' wx:if="{{imgUrls.length}}">
+    <view class='swiperWrapper'>
+    <swiper indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}" 
+            interval="{{interval}}" 
+            duration="{{duration}}"
+            indicator-dots="{{true}}"
+            bindchange="swiperChange"
+            indicator-color="rgba(26, 29, 30, .3)"
+            indicator-active-color="#1A1D1E">
+      <block wx:for="{{imgUrls}}" wx:key>
+        <swiper-item>
+          <image src="{{item.picUrl}}" 
+          mode="aspectFill" 
+          class="slide-image" 
+          data-type="{{item.type}}"
+          data-url="{{item.linkUrl}}"
+          data-id="{{bannerid}}"
+          bindtap="openUrl"/>
+        </swiper-item>
+      </block>
+    </swiper>
+    </view>
+    </view>
+    
+    
+    <!-- 咨询 -->
+    <view class="indexpadding">
+      <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+        <view class="title" style="width: {{navsWidth}}rpx">
+          <text class="{{index == activeIndex ? 'active' : ''}}"
+                wx:for="{{navsArray}}"
+                wx:key="{{index}}"
+                data-id="{{item.id}}"
+                data-index="{{index}}"
+                bindtap="changeNav">{{item.name}}</text>
+        </view>
+      </scroll-view>
+      <!-- 列表 -->
+      <view class="listman border-b" 
+            wx:for="{{newsArr}}" 
+            wx:key="{{index}}">
+        <view class="list" 
+              bindtap="openUrls"
+              data-id="{{item.id}}">
+          <view class="l">
+            <view class="tit">{{item.title}}</view>
+            <view class="det">
+              <text>{{item.author}}</text>
+              <text>{{item.createDate}}</text>
+            </view>
+          </view>
+          <view class="r">
+            <image class="logo" mode="aspectFill" src="{{item.picUrl}}"></image>
+          </view>
+        </view>
+      </view>
+      <no-data morentext="暂无数据！" wx:if="{{!newsArr.length}}"></no-data>
+    </view>
+  </view>
+
+  <view class="select_user" wx:if="{{isWin}}" bindtap="closeWin">
+    <view class="userlist {{item.select ? 'ulistselect':''}}" 
+          wx:for="{{userInfo}}" 
+          wx:key
+          data-id="{{item.id}}"
+          catchtap="chengStudent">
+      <view class="listcenter border-b">
+        <view class="l">
+          <view class="select_avator">
+            <image mode="aspectFill" class="img" src="/images/icon/default_avator.png"></image>
+          </view>
+          <text class="select_name">{{item.name}}</text>
+        </view>
+        <image class="selectimg" mode="widthFix" src="/images/icon/select.png"></image>
+      </view>
+    </view>
+    <!-- <view class="userlist">
+      <view class="listcenter border-b">
+        <view class="l">
+          <view class="select_avator">
+            <image mode="aspectFill" class="img" src="/images/icon/default_avator.png"></image>
+          </view>
+          <text class="select_name">郭亮</text>
+        </view>
+        <image class="selectimg" mode="widthFix" src="/images/icon/select.png"></image>
+      </view>
+    </view> -->
+  </view>
+</view>
+<!-- <view wx:if="{{!isStudentData}}">
+  <no-data isshowbottom="{{true}}"></no-data>
+</view> -->

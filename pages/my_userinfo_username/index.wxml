@@ -1,0 +1,16 @@
+<!--pages/my_userinfo_username/index.wxml-->
+<view class="grinfo">
+  <input type="text" 
+          value="{{nameVal}}" 
+          maxlength="16" 
+          placeholder="请输入姓名"
+          bindinput="getNameVal"
+          confirm-type="修改"
+          focus="{{true}}"
+          bindconfirm="confirmSub"></input>
+          <view class="text" wx:if="{{nameVal}}" catchtap="aaaaaa">×</view> 
+</view>
+<view class="jtjs">4-16个字符，一个汉子为两个字符</view>
+<view class="cz angular" bindtap="confirmSub">保存</view>
+
+<!-- <button bindtap="confirmSub">提交</button> -->

@@ -1,0 +1,5 @@
+<!--pages/my_feedback_details/index.wxml-->
+<view class="content">
+  <view class="title">{{obj.title}}</view>
+  <rich-text nodes="{{obj.richText}}"></rich-text>
+</view>

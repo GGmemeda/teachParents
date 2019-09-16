@@ -1,0 +1,28 @@
+<view class="content">
+  <!--pages/my_help_center/index.wxml-->
+<!-- 输入框 -->
+  <view class="t1">
+    <textarea bindinput="textChange" value="{{val}}" maxlength="500" placeholder="记录下此刻的想法吧～"></textarea>
+    <view class="ct">{{lenText}}/500</view>
+  </view>
+
+  <view class="uploadimg">
+    <view class="tit">上传图片，记录一下吧（6张内）</view>
+    <view class="imgcontent">
+      <view class="addimg" 
+            data-index="{{index}}" 
+            bindtap="changeImg" 
+            wx:for="{{adviceImgList}}" 
+            wx:key="{{index}}" 
+            wx:if="{{index <= 5}}">
+        <image mode="aspectFill" wx:if="{{item.url}}" src="{{item.url}}"></image>
+        <text class="cloase" data-index="{{index}}" catchtap="deleteImg">×</text>
+      </view>
+      <view wx:if="{{![1,2,3,4,5].includes(adviceImgList.length) && adviceImgList.length < 6}}" class="addimg" bindtap="selectImg"></view>
+    </view>
+  </view>
+  <!-- <view class="cz angular" bindtap="submitBack"><text>确定</text></view> -->
+  <view class="posi">
+    <view class="cz angular" bindtap="submitBack">确认完成</view>
+  </view>
+</view>

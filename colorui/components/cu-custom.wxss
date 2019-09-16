@@ -1,0 +1,4 @@
+/* colorui/components/cu-custom.wxss */
+.top_nav_bgc {
+  background-color: #fff;
+}

@@ -1,0 +1,11 @@
+<!--pages/index_details/index.wxml-->
+<view class="content">
+  <view class="title">{{content.title}}</view>
+  <view class="ava">
+    <text>{{content.author}}</text>
+    <text>{{content.updateDate}}</text>
+  </view>
+  <view>
+    <rich-text class="ql-container" nodes="{{content.content}}"></rich-text>
+  </view>
+</view>

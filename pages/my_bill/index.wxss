@@ -1,0 +1,48 @@
+/* pages/my_bill/index.wxss */
+.billcontent {
+  padding: 0 32rpx;
+  background-color: #ffffff;
+}
+
+.list {
+  padding: 37rpx 0;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  height: 86rpx;
+}
+
+.l1 {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.l2 {
+  flex: 1;
+  height: 100%;
+}
+
+.l2center > view:first-child {
+  color: rgba(36, 42, 58, 1);
+  font-size: 32rpx;
+}
+
+.l2center > view:last-child {
+  color: rgba(36, 42, 58, .6);
+  font-size: 28rpx;
+}
+
+.l2center {
+  height: 100%;
+  padding: 0 32rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.l3 {
+  color: rgba(253, 24, 0, 1);
+  font-size: 32rpx;
+}
