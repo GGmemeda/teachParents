@@ -25,7 +25,7 @@
       <view class="tc2"> 
         <view class="tct border-b">课堂管理</view>
         <view class="ktcontent">
-          <view class="lis border-r">
+          <view class="lis border-r" data-name="aa" bindtap="toPage">
             <image mode="widthFix" class="tzroom" src="/images/classroom/tz.png"></image>
             <view class="mz">通知</view>
           </view>
@@ -41,7 +41,7 @@
             <image mode="widthFix" class="tzroom" src="/images/classroom/xc.png"></image>
             <view class="mz">相册</view>
           </view>
-          <view class="lis border-t border-r">
+          <view class="lis border-t border-r" data-name="file_upload" bindtap="toPage">
             <image mode="widthFix" class="tzroom" src="/images/classroom/wj.png"></image>
             <view class="mz">文件</view>
           </view>

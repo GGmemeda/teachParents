@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/classroom/index",
+    "pages/addtest/index",
+    "pages/results/index",
     "pages/index/index",
     "pages/wanchengzuoye_det/index",
     "pages/wanchengzuoye_video/index",
@@ -47,7 +50,12 @@
         "pagePath": "pages/index/index",
         "text": "首页"
       },
-      
+      {
+        "iconPath": "images/icon/tabbar/index.png",
+        "selectedIconPath": "images/icon/tabbar/classroom.png",
+        "pagePath": "pages/classroom/index",
+        "text": "课堂"
+      },
       {
         "iconPath": "images/icon/tabbar/my.png",
         "selectedIconPath": "images/icon/tabbar/mys.png",
