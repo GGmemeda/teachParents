@@ -1,0 +1,84 @@
+/* pages/results_det/index.wxss */
+.jsj {
+  display: flex;
+  height: 246rpx;
+  background: -webkit-linear-gradient(#00CBFF, #009BFD);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.roomname {
+  font-size:40rpx;
+  color:rgba(255,255,255,1);
+}
+.room_clonm {
+  display: flex;
+  justify-content: space-between;
+}
+.rc1 {
+  margin-top: 28rpx;
+}
+.rc1 view:first-child{
+  font-size:32rpx;
+  color:rgba(255,255,255,1);
+}
+.rc1 view:last-child{
+  font-size:28rpx;
+  color:rgba(255,255,255,1);
+  padding: 0 63rpx;
+  margin-top: 6rpx;
+}
+.fotercontent {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+}
+.clun2 {
+  height: 88rpx;
+  display: flex;
+}
+.clun3 {
+  flex: 1;
+  height: 0;
+}
+.clun3c {
+  height: 100%;
+}
+.clun4 {
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size:28rpx;
+  color:rgba(0,155,253,1);
+}
+.lanm {
+  display: inline-block;
+  width: 156rpx;
+  height: 100%;
+  line-height: 88rpx;
+}
+.pasdjf {
+  width: 900rpx;
+}
+.t123 {
+  flex: 1;
+  width: 0;
+}
+.t123 scroll-view {
+  width: 100%;
+}
+.t324{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58rpx;
+  box-shadow: -2px 0 3px -1px #d8d5d5;
+}
+.sdfs {
+  width: 24rpx;
+} 

@@ -1,0 +1,81 @@
+<!--pages/results_det/index.wxml-->
+<view class="fotercontent">
+  <view class="jsj">
+    <view class="roomname">语文</view>
+    <view class="room_clonm">
+      <view class="rc1">
+        <view>99</view>
+        <view>最高分</view>
+      </view>
+      <view class="rc1">
+        <view>99</view>
+        <view>平均分</view>
+      </view>
+      <view class="rc1">
+        <view>99</view>
+        <view>最低分</view>
+      </view>
+    </view>
+  </view>
+  <view class="clun2">
+    <view class="t123">
+      <scroll-view scroll-x bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view class="pasdjf">
+          <view class="lanm">A(30)</view>
+          <view class="lanm">A(30)</view>
+          <view class="lanm">A(30)</view>
+          <view class="lanm">A(30)</view>
+          <view class="lanm">A(30)</view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="t324">
+      <image class="sdfs" mode="widthFix" src="/images/classroom/gd.png"></image>
+    </view>
+  </view>
+  <view class="clun3">
+    <view class="clun3c">
+      <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view id="green" class="scroll-view-item bc_green">1</view>
+    <view id="red"  class="scroll-view-item bc_red">2</view>
+    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
+    <view id="blue" class="scroll-view-item bc_blue">4</view>
+    <view id="green" class="scroll-view-item bc_green">1</view>
+    <view id="red"  class="scroll-view-item bc_red">2</view>
+    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
+    <view id="blue" class="scroll-view-item bc_blue">4</view>
+    <view id="green" class="scroll-view-item bc_green">1</view>
+    <view id="red"  class="scroll-view-item bc_red">2</view>
+    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
+    <view id="blue" class="scroll-view-item bc_blue">4</view>
+    <view id="green" class="scroll-view-item bc_green">1</view>
+    <view id="red"  class="scroll-view-item bc_red">2</view>
+    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
+    <view id="blue" class="scroll-view-item bc_blue">4</view>
+    <view id="green" class="scroll-view-item bc_green">1</view>
+    <view id="red"  class="scroll-view-item bc_red">2</view>
+    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
+    <view id="blue" class="scroll-view-item bc_blue">4</view>
+    <view id="green" class="scroll-view-item bc_green">1</view>
+    <view id="red"  class="scroll-view-item bc_red">2</view>
+    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
+    <view id="blue" class="scroll-view-item bc_blue">4</view>
+    <view id="green" class="scroll-view-item bc_green">1</view>
+    <view id="red"  class="scroll-view-item bc_red">2</view>
+    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
+    <view id="blue" class="scroll-view-item bc_blue">4</view>
+    <view id="green" class="scroll-view-item bc_green">1</view>
+    <view id="red"  class="scroll-view-item bc_red">2</view>
+    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
+    <view id="blue" class="scroll-view-item bc_blue">4</view>
+    <view id="green" class="scroll-view-item bc_green">1</view>
+    <view id="red"  class="scroll-view-item bc_red">2</view>
+    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
+    <view id="blue" class="scroll-view-item bc_blue">4</view>
+  </scroll-view>
+    </view>
+  </view>
+  <view class="clun4">
+  撤回
+  </view>
+</view>

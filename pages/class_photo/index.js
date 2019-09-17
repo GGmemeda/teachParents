@@ -1,32 +1,50 @@
-// pages/results/index.js
+// pages/class_photo/index.js
+let app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tabArr: ["独立考试(30)", "统一考试(30)"],
-    navTabIndex: 0
+    dataList: [],
+    imgHz: ["BMP", "JPG", "JPEG", "PNG", "GIF"]
   },
 
-  addresults() {
+  getReadyData() {
+    app.HTTP({
+      url: `wxapi/photo/getPhotoList`,
+      method: 'GET'
+    }).then(res => {
+      res.result.forEach((item, index) => {
+        let urlList = item.url.split(";");
+        let arr = [];
+        urlList.forEach((cItem, cIndex) => {
+          arr.push({
+            url: cItem,
+            isImg: this.data.imgHz.includes(app.getImageSuffix(cItem).toUpperCase()) ? true : false
+          })
+          console.log(arr);
+        })
+        item.urlList = arr;
+      })
+      console.log(res.result)
+      this.setData({
+        dataList: res.result
+      })
+    })
+  },
+
+  open() {
     wx.navigateTo({
-      url: '/pages/addtest/index'
+      url: '/pages/class_photo_upload/index'
     })
-  },
-
-  pageTabFun(e) {
-    this.setData({
-      navTabIndex: e.detail.index
-    })
-    console.log(e.detail.index)
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getReadyData();
   },
 
   /**

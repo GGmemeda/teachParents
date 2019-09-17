@@ -1,0 +1,81 @@
+/* pages/class_photo/index.wxss */
+.av {
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.il {
+  width: 174rpx;
+  height: 174rpx;
+  vertical-align: top;
+  margin-top: 9rpx;
+}
+
+.content {
+  background-color: #fff;
+  padding: 32rpx;
+}
+
+.li {
+  display: flex;
+  margin-bottom: 30rpx;
+}
+
+.li > .l {
+  width: 146rpx;
+}
+
+.li > .r {
+  flex: 1;
+}
+
+.name {
+  color: rgba(51, 57, 71, 1);
+  font-size: 32rpx;
+}
+
+.clb {
+  color: rgba(51, 57, 71, 1);
+  font-size: 28rpx;
+  text-align: justify;
+  margin-top: 14rpx;
+}
+
+.imglist {
+  margin-top: 14rpx;
+  overflow: hidden;
+}
+
+.imglist > .il {
+  margin-right: 9rpx;
+  float: left;
+}
+
+.imglist > .il:nth-child(3n) {
+  margin-right: 0;
+}
+
+.il > .ils {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.fabu {
+  color: rgba(51, 57, 71, .6);
+  font-size: 24rpx;
+  padding-top: 20rpx;
+}
+
+.uploadImg {
+  width: 88rpx;
+  height: 88rpx;
+  position: fixed;
+  right: 32rpx;
+  bottom: 32rpx;
+  background-color: #009BFD;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 88rpx;
+  color: #fff;
+}

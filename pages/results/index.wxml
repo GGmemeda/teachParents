@@ -34,5 +34,5 @@
 </view>
 
 <view class="psoi" wx:if="{{!navTabIndex}}">
-  <view class="cz angular">添加考试</view>
+  <view class="cz angular" bindtap="addresults">添加考试</view>
 </view>

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/results_det/index",
     "pages/classroom/index",
     "pages/addtest/index",
     "pages/results/index",

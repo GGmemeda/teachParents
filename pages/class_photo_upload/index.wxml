@@ -1,0 +1,27 @@
+<view class="content">
+  <view class="textar">
+    <textarea value="{{val}}" bindinput="inputChange" maxlength="-1" placeholder="记录下此刻的想法吧～"></textarea>
+  </view>
+  <view class="uploadimg">
+    <view class="imgcontent">
+      <view class="addimg" 
+            data-index="{{index}}" 
+            bindtap="changeImg" 
+            wx:for="{{adviceImgList}}" 
+            wx:key="{{index}}" >
+          <image wx:if="{{item.isimg}}" mode="aspectFill" wx:if="{{item.url}}" src="{{item.url}}"></image>
+          <view class="video">
+            <video object-fit="fill" class="listvideo" wx:if="{{!item.isimg}}" src="{{item.url}}" controls="{{false}}"></video>
+            <image class="icons" mode="widthFix" src="/images/icon/video.png"></image>
+          </view>
+        <text class="cloase" data-index="{{index}}" catchtap="deleteImg">×</text>
+      </view>
+      <!-- <view wx:if="{{![1,2,3,4].includes(adviceImgList.length) && adviceImgList.length < 5}}" class="addimg" bindtap="selectImg"></view> -->
+      <view class="addimg" bindtap="changeImgVideo"></view>
+    </view>
+  </view>
+</view>
+
+<view class="fixed">
+  <view bindtap="upl" class="{{isUpload ? 'cz' : 'dis'}}">上传</view>
+</view>

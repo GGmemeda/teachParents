@@ -33,11 +33,11 @@
             <image mode="widthFix" class="tzroom" src="/images/classroom/zy.png"></image>
             <view class="mz">作业</view>
           </view>
-          <view class="lis">
+          <view class="lis" data-name="results" bindtap="toPage">
             <image mode="widthFix" class="tzroom" src="/images/classroom/cj.png"></image>
             <view class="mz">成绩</view>
           </view>
-          <view class="lis border-t border-r">
+          <view class="lis border-t border-r" data-name="class_photo" bindtap="toPage">
             <image mode="widthFix" class="tzroom" src="/images/classroom/xc.png"></image>
             <view class="mz">相册</view>
           </view>
