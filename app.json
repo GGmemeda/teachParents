@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/file_upload/index",
     "pages/index/index",
     "pages/wanchengzuoye_det/index",
     "pages/wanchengzuoye_video/index",
