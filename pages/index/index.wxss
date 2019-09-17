@@ -44,15 +44,15 @@ swiper {
 }
 
 .list .l {
-  width: 460rpx;
+  width:604rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .list .r {
-  width: 202rpx;
-  height: 140rpx;
+  width: 65rpx;
+  height: 80rpx;
 }
 
 .list .r image {

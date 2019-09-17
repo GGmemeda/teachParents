@@ -1,0 +1,24 @@
+<!--pages/sao_page/index.wxml-->
+<view style="overflow: hidden;min-height: 100vh;background: #fff">
+   <view class="top-part">
+       <view class="one-step">第一步</view>
+       <view class="tips">打开电脑浏览器，输入以下网址</view>
+       <view class="image-part">
+           <image src="/images/sao_page/down1.png"></image>
+       </view>
+       <view class="last-address">www.yitiwanlian.com</view>
+   </view>
+    <view class="middle-arrow">
+        <image src="/images/sao_page/line.png" alt=""></image>
+    </view>
+    <view class="top-part top-part-last">
+        <view class="one-step">第二步</view>
+        <view class="tips">点击下方按钮，扫描网页上的二维码</view>
+        <view class="image-part image-part-other">
+            <image src="/images/sao_page/down1.png"></image>
+        </view>
+        <view class="sao-part">
+            <image bindtap="onScan" src="/images/sao_page/saoyisao.png"></image>
+        </view>
+    </view>
+</view>

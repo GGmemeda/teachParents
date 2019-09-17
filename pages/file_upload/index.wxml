@@ -1,2 +1,31 @@
 <!--pages/file_upload/index.wxml-->
-<text>pages/file_upload/index.wxml</text>
+
+<view style="height: 100vh;background: #fff">
+    <view class="list-view">
+        <view class="listman border-b"
+              wx:for="{{fileArray}}"
+              wx:key="{{index}}">
+            <view class="list"
+                  bindtap="openUrls"
+                  data-id="{{item.id}}">
+                <view class="r">
+                    <image class="left-image" mode="aspectFill" src="{{imageArray[item.type]}}"></image>
+                </view>
+                <view class="l">
+                    <view class="tit">{{item.name}}</view>
+                    <view class="det">
+                        <text>{{item.size}}</text>
+                        <text>{{item.teacher}}</text>
+                        <text>{{item.updateTime}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <no-data morentext="暂无数据！" wx:if="{{!fileArray.length}}"></no-data>
+    </view>
+    <view class="bottom-button">
+        <view class="cz angular file-bottom-button" bindtap="toUploadPage">
+            上传文件
+        </view>
+    </view>
+</view>

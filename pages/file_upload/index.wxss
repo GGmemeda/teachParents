@@ -1,1 +1,66 @@
 /* pages/file_upload/index.wxss */
+
+.listman {
+    overflow: hidden;
+    padding-bottom: 40rpx;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40rpx;
+}
+
+.list .l {
+    width: 604rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.list .r {
+    width: 65rpx;
+    height:80rpx;
+    margin-left:40rpx
+}
+
+.list .r image {
+    width: 100%;
+    height: 100%;
+}
+
+.list  .tit {
+    color: rgba(26, 29, 30, 1);
+    font-size: 32rpx;
+    text-align: justify;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+}
+
+.list  .det {
+    color: rgba(26, 29, 30, .6);
+    font-size: 24rpx;
+    text-align: left;
+}
+.det text+text{
+  margin-left: 15px;
+}
+
+.bottom-button{
+    position: fixed;
+    bottom: 0rpx;
+    padding: 0 40px 20rpx 40rpx;
+    background: #fff;
+}
+.list-view{
+    overflow-x:hidden ;
+    overflow-y: auto;
+    position: fixed;
+    left:0;
+    right:0;
+    bottom:130rpx;
+    top:0;
+}

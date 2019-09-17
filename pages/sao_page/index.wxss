@@ -1,0 +1,64 @@
+/* pages/sao_page/index.wxss */
+.top-part{
+    width:607rpx;
+    height: 420rpx;
+    border-radius:44rpx;
+    border:1px dashed rgba(0,155,253,1);
+    margin: 46rpx auto 0 auto;
+}
+.one-step{
+    margin-top: 60rpx;
+    font-size:32rpx;
+    font-family:PingFangSC;
+    font-weight:500;
+    color:rgba(0,155,253,1);
+    line-height:32px;
+    text-align: center;
+}
+.tips{
+    font-size:32rpx;
+    font-family:PingFangSC;
+    font-weight:400;
+    color:rgba(44,50,65,1);
+    line-height:45rpx;
+    text-align: center;
+}
+.image-part{
+    margin: 50rpx 0;
+    text-align: center;
+}
+.image-part image{
+    width: 32rpx;
+    height: 37rpx;
+}
+.last-address{
+    font-size:32rpx;
+    font-family:PingFangSC;
+    font-weight:500;
+    color:rgba(0,155,253,1);
+    line-height:32rpx;
+    text-align: center;
+}
+.middle-arrow{
+    text-align: center;
+     margin: 22rpx 0;
+}
+.middle-arrow image{
+    width:9rpx;
+    height:60rpx;
+}
+.top-part-last{
+    margin: auto;
+}
+.sao-part{
+  text-align: center;
+  position: relative;
+  top: -20rpx;
+}
+.sao-part image{
+  width: 166rpx;
+  height: 166rpx;
+}
+.image-part-other{
+  margin-bottom: 0;
+}

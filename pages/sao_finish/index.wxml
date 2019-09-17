@@ -1,0 +1,14 @@
+<!--pages/sao_finish/index.wxml-->
+
+<view style="overflow: hidden;min-height: 100vh;background: #fff">
+    <view class="finish-image">
+        <image src="/images/sao_page/finish.png"></image>
+    </view>
+    <view>
+        <view class="inner-text"> 请您根据网页提示上传文件，完成后即可同步到手机端</view>
+    </view>
+    <view class="last-tips">（支持文件格式：word、excel、ppt、pdf）</view>
+    <view class="cz angular file-bottom-button" bindtap="onUploadFilePage">
+        完成
+    </view>
+</view>
