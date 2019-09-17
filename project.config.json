@@ -22,8 +22,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.4",
-	"appid": "wxde6ccc746c7fdb73",
-	"projectname": "%E6%99%BA%E6%85%A7%E6%95%99%E8%82%B2",
+	"appid": "wx1bbb2092ffa03ccd",
+	"projectname": "teachParents",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
