@@ -17,8 +17,8 @@
         <view class="image-part image-part-other">
             <image src="/images/sao_page/down1.png"></image>
         </view>
-        <view class="sao-part">
-            <image bindtap="onScan" src="/images/sao_page/saoyisao.png"></image>
+        <view class="sao-part" >
+            <image bindtap="onScan"  src="/images/sao_page/saoyisao.png"></image>
         </view>
     </view>
 </view>
