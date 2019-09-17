@@ -1,0 +1,38 @@
+<!--pages/results/index.wxml-->
+<tab tabarr="{{tabArr}}" bind:changetab="pageTabFun"></tab>
+<view wx:if="{{!navTabIndex}}">
+  <view class="cul">
+    <view class="cli border-b">
+      <text>9月15日单元测试</text>
+      <image class="topng" mode="widthFix" src="/images/icon/to.png"></image>
+    </view>
+    <view class="cli border-b">
+      <text>9月15日单元测试</text>
+      <image class="topng" mode="widthFix" src="/images/icon/to.png"></image>
+    </view>
+    <view class="cli border-b">
+      <text>9月15日单元测试</text>
+      <image class="topng" mode="widthFix" src="/images/icon/to.png"></image>
+    </view>
+  </view>
+</view>
+<view wx:if="{{navTabIndex}}">
+  <view class="cul">
+    <view class="cli border-b">
+      <text>aaa</text>
+      <image class="topng" mode="widthFix" src="/images/icon/to.png"></image>
+    </view>
+    <view class="cli border-b">
+      <text>bbb</text>
+      <image class="topng" mode="widthFix" src="/images/icon/to.png"></image>
+    </view>
+    <view class="cli border-b">
+      <text>9月15日单元测试</text>
+      <image class="topng" mode="widthFix" src="/images/icon/to.png"></image>
+    </view>
+  </view>
+</view>
+
+<view class="psoi" wx:if="{{!navTabIndex}}">
+  <view class="cz angular">添加考试</view>
+</view>

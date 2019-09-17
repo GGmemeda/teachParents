@@ -1,0 +1,13 @@
+<!--pages/addtest/index.wxml-->
+<view class="cbg">
+  <view class="t1 border-b">
+    <text>考试科目</text>
+    <text>数学</text>
+  </view>
+  <view class="t2">
+    <input value="{{val}}" maxlength="15" bindinput="input" placeholder="请输入考试名称"></input>
+  </view>
+</view>
+<view class="psoi" wx:if="{{!navTabIndex}}">
+  <view class="{{issubmit?'cz' : 'dis'}} angular" bindtap="submit">确定</view>
+</view>

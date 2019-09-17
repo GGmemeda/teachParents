@@ -1,0 +1,32 @@
+/* pages/addtest/index.wxss */
+.cbg {
+  background-color: #fff;
+  padding: 0 32rpx;
+}
+.t1 {
+  display: flex;
+  justify-content: space-between;
+  font-size:32rpx;
+  color:rgba(26,29,30,1);
+  height: 100rpx;
+  align-items: center;
+}
+.t2 {
+  height: 100rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.t2 input {
+  height: 100%;
+  font-size:32rpx;
+  color:rgba(26,29,30,1);
+  width: 100%;
+}
+.psoi {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 20rpx;
+}

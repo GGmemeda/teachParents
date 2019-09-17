@@ -1,0 +1,25 @@
+/* pages/results/index.wxss */
+.cul {
+  font-size:32rpx;
+  color:rgba(26,29,30,1);
+  background-color: #fff;
+  margin-top: 40rpx;
+  padding: 0 32rpx;
+}
+.cli {
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topng {
+  width: 28rpx;
+}
+
+.psoi {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 20rpx;
+}

@@ -1,0 +1,102 @@
+/* pages/classroom/index.wxss */
+.banner {
+  width: 100%;
+  vertical-align: top;
+}
+.t2c {
+  padding: 0 32rpx;
+  position: relative;
+  top: -83rpx;
+}
+.tc1 {
+  height: 258rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+}
+.tc2 {
+  background-color: #fff;
+  margin-top: 24rpx;
+  border-radius: 12rpx;
+}
+.t1content {
+  padding:28rpx 32rpx;
+}
+.t1content .l1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.jsdjf {
+  height: 100%;
+}
+.t1content .l1 image {
+  width: 32rpx;
+}
+.t1content .l1 text {
+  font-size:32rpx;
+  color:rgba(26,29,30,1);
+}
+.t1content .l2 {
+  font-size:28rpx;
+  color:rgba(26,29,30,.6);
+  margin-top: 10rpx;
+}
+.t2con {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32rpx;
+  height: 109rpx;
+}
+.t2con .l image {
+  width: 30rpx;
+  margin-right: 26rpx;
+}
+.t2con .r image {
+  width: 22rpx;
+  margin-left: 20rpx;
+}
+.t2con .r {
+  font-size:32rpx;
+  color:rgba(26,29,30,.4);
+}
+.t2con .a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tct {
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size:32rpx;
+  color:rgba(26,29,30,1);
+  font-weight: bold;
+  padding: 0 32rpx;
+}
+.ktcontent {
+  display: flex;
+  flex-wrap: wrap;
+}
+.lis {
+  width: 33.333%;
+  height: 228rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tzroom {
+  width: 58rpx;
+  vertical-align: top;
+}
+.mz {
+  margin-top: 26rpx;
+}
+.tanchukuang {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0,.4);
+  z-index: 1000;
+}

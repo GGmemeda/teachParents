@@ -1,0 +1,56 @@
+<!--pages/classroom/index.wxml-->
+<view class="classroom">
+  <view>
+    <image class="banner" mode="widthFix" src="/images/classroom/banner.png"></image>
+  </view>
+  <view class="t2">
+    <view class="t2c">
+      <view class="tc1">
+        <view class="t1content border-b">
+          <view class="l1">
+            <text>六(3)班-语文</text>
+            <view class="jsdjf" bindtap="showAction">
+              <image mode="widthFix" src="/images/classroom/gengduo.png"></image>
+            </view>
+          </view>
+          <view class="l2">
+            绵阳实验小学
+          </view>
+        </view>
+        <view class="t2con">
+          <view class="l a"><image mode="widthFix" src="/images/classroom/cls.png"></image>课堂学生</view>
+          <view class="r a">50人<image mode="widthFix" src="/images/icon/to.png"></image></view>
+        </view>
+      </view>
+      <view class="tc2"> 
+        <view class="tct border-b">课堂管理</view>
+        <view class="ktcontent">
+          <view class="lis border-r">
+            <image mode="widthFix" class="tzroom" src="/images/classroom/tz.png"></image>
+            <view class="mz">通知</view>
+          </view>
+          <view class="lis border-r">
+            <image mode="widthFix" class="tzroom" src="/images/classroom/zy.png"></image>
+            <view class="mz">作业</view>
+          </view>
+          <view class="lis">
+            <image mode="widthFix" class="tzroom" src="/images/classroom/cj.png"></image>
+            <view class="mz">成绩</view>
+          </view>
+          <view class="lis border-t border-r">
+            <image mode="widthFix" class="tzroom" src="/images/classroom/xc.png"></image>
+            <view class="mz">相册</view>
+          </view>
+          <view class="lis border-t border-r">
+            <image mode="widthFix" class="tzroom" src="/images/classroom/wj.png"></image>
+            <view class="mz">文件</view>
+          </view>
+          <view class="lis border-t"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 课堂管理弹出框 -->
+<!-- <view class="tanchukuang"></view> -->
+<no-data isshowbottom="{{true}}" morentext="去绑定老师"></no-data>

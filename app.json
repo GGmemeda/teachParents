@@ -45,12 +45,7 @@
         "pagePath": "pages/index/index",
         "text": "首页"
       },
-      {
-        "iconPath": "images/icon/tabbar/index.png",
-        "selectedIconPath": "images/icon/tabbar/indexs.png",
-        "pagePath": "pages/index/index",
-        "text": "课堂"
-      },
+      
       {
         "iconPath": "images/icon/tabbar/my.png",
         "selectedIconPath": "images/icon/tabbar/mys.png",
