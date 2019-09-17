@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/file_upload/index",
     "pages/index/index",
     "pages/wanchengzuoye_det/index",
     "pages/wanchengzuoye_video/index",
@@ -22,7 +21,10 @@
     "pages/my_userinfo_username/index",
     "pages/my_userinfo/index",
     "pages/my_info_add/index",
-    "pages/index_details/index"
+    "pages/index_details/index",
+    "pages/sao_finish/index",
+    "pages/sao_page/index",
+    "pages/file_upload/index"
   ],
   "permission": {
     "scope.userLocation": {
