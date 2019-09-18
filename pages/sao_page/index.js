@@ -71,8 +71,10 @@ Page({
             onlyFromCamera: true,
             success(res) {
                 var url = res.result;
+                const token = wx.getStorageSync('token');
+                console.log(token);
                 wx.request({
-                    url: `${url}&token=Bearer eyJhbGciOiJIUzUxMiJ9.eyJleHAiOjE1NjkzMDM0MjAsInVpZCI6IjEsMCIsImlhdCI6MTU2ODcwMzQyMH0.NjjtiWgtl88It1ySFnLm_8dD_bxapwu7plL8Vtogf5C6YGxpZ4NniqvtpkNFShs9p2r6kaRsQyhmCDZjLVTm0Q&type=/fileList`,
+                    url: `${url}&token=${token}&type=/fileList`,
                     method: "GET",
                     success(res) {
                         if (res.data && res.data.status == 200) {
@@ -81,6 +83,13 @@ Page({
                             });
                         }
                     },
+                    fail(err) {
+                        console.log(err);
+                        wx.showToast({
+                            title: err.msg,
+                            icon: 'fail',
+                        });
+                    }
                 });
             }
         });

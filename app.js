@@ -4,10 +4,10 @@ var http = require('utils/http.js');
 App({
   data: {
     // baseUrl: 'http://47.108.69.129:8087/',
-    baseUrl: 'https://weixin.yitiwanlian.com/',
+    // baseUrl: 'https://weixin.yitiwanlian.com/',
     // baseUrl: 'https://xiaochengxu.yitiwanlian.com/',
     // baseUrl: 'http://192.168.0.107:8087/',
-    // baseUrl: 'http://192.168.0.101:8087/',
+    baseUrl: 'http://192.168.0.104:8089/',
     header: {
       openid: '2n4nqmdic8j38cj4'
     },

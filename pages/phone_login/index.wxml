@@ -1,0 +1,24 @@
+<!--pages/phone_login/index.wxml-->
+<view style="overflow: hidden;min-height: 100vh;background: #fff">
+    <view class="circle-logo">
+        <image src="/images/phone_login/logo_circle.png"></image>
+    </view>
+    <view class="logo-words">绑定亿健通账号</view>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+
+        <view class="section">
+            <image class="form-img" src="/images/phone_login/phone.png"></image>
+            <input bindinput="inputChange" bindblur="inputBlur" value="{{phone}}" name="phone" placeholder="请输入手机号"/>
+        </view>
+
+        <view class="section">
+            <image class="form-img" src="/images/phone_login/yanz.png"></image>
+            <input  bindinput="codeChange" name="code" placeholder="请输入验证码"/>
+            <view bindtap="onTimer" class="code-button">{{timeWords}}</view>
+        </view>
+        <view class="btn-area">
+            <button class="cz angular {{!phone||!code?'unactive':''}}" form-type="submit">确定</button>
+        </view>
+    </form>
+
+</view>

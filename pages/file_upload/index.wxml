@@ -9,7 +9,7 @@
                   bindtap="openUrls"
                   data-id="{{item.id}}">
                 <view class="r">
-                    <image class="left-image" mode="aspectFill" src="{{imageArray[item.type]}}"></image>
+                    <image class="left-image" mode="aspectFill" src="{{imageArray[item.suffix]}}"></image>
                 </view>
                 <view class="l">
                     <view class="tit">{{item.name}}</view>
@@ -21,7 +21,7 @@
                 </view>
             </view>
         </view>
-        <no-data morentext="暂无数据！" wx:if="{{!fileArray.length}}"></no-data>
+        <no-data morentext="暂无数据！" wx:if="{{fileArray.length<1}}"></no-data>
     </view>
     <view class="bottom-button">
         <view class="cz angular file-bottom-button" bindtap="toUploadPage">

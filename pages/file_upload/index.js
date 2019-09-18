@@ -1,100 +1,19 @@
 // pages/file_upload/index.js
+let app = getApp();
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        fileArray: [{
-            id: '23',
-            name: '名字1',
-            size: '100kb',
-            teacher: '涨雪峰',
-            updateTime: '2019/10/11 12:30:22',
-            type: 'word'
-        }, {
-            id: '23',
-            name: '名字1',
-            size: '100kb',
-            teacher: '涨雪峰',
-            updateTime: '2019/10/11 12:30:22',
-            type: 'word'
-        }, {
-            id: '23',
-            name: '名字1',
-            size: '100kb',
-            teacher: '涨雪峰',
-            updateTime: '2019/10/11 12:30:22',
-            type: 'word'
-        }, {
-            id: '23',
-            name: '名字1',
-            size: '100kb',
-            teacher: '涨雪峰',
-            updateTime: '2019/10/11 12:30:22',
-            type: 'word'
-        }, {
-            id: '23',
-            name: '名字1',
-            size: '100kb',
-            teacher: '涨雪峰',
-            updateTime: '2019/10/11 12:30:22',
-            type: 'word'
-        }, {
-            id: '23',
-            name: '名字1',
-            size: '100kb',
-            teacher: '涨雪峰',
-            updateTime: '2019/10/11 12:30:22',
-            type: 'word'
-        }, {
-            id: '23',
-            name: '名字1',
-            size: '100kb',
-            teacher: '涨雪峰',
-            updateTime: '2019/10/11 12:30:22',
-            type: 'word'
-        }, {
-            id: '23',
-            name: '名字1',
-            size: '100kb',
-            teacher: '涨雪峰',
-            updateTime: '2019/10/11 12:30:22',
-            type: 'word'
-        }, {
-            id: '23',
-            name: '名字1',
-            size: '100kb',
-            teacher: '涨雪峰',
-            updateTime: '2019/10/11 12:30:22',
-            type: 'word'
-        }, {
-            id: '23',
-            name: '名字1',
-            size: '100kb',
-            teacher: '涨雪峰',
-            updateTime: '2019/10/11 12:30:22',
-            type: 'word'
-        }, {
-            id: '23',
-            name: '名字1',
-            size: '100kb',
-            teacher: '涨雪峰',
-            updateTime: '2019/10/11 12:30:22',
-            type: 'word'
-        }, {
-            id: '23',
-            name: '名字1',
-            size: '100kb',
-            teacher: '涨雪峰',
-            updateTime: '2019/10/11 12:30:22',
-            type: 'word'
-        }],
+        fileArray: [],
         imageArray: {
-            word: '/images/upload_file/word.png',
+            docx: '/images/upload_file/word.png',
             ppt: '/images/upload_file/ppt.png',
+            pptx: '/images/upload_file/ppt.png',
             pdf: '/images/upload_file/pdf.png',
             excel: '/images/upload_file/excel.png',
+            xlsx: '/images/upload_file/excel.png',
         }
     },
 
@@ -116,7 +35,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this.getDocumentList();
     },
 
     /**
@@ -137,7 +56,7 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
+        this.getDocumentList();
     },
 
     /**
@@ -153,6 +72,27 @@ Page({
     onShareAppMessage: function () {
 
     },
+    /**
+     * 获取数据
+     */
+    getDocumentList:function() {
+        app.HTTP({
+            url: '/wxtapi/document',
+            method: "GET",
+            isLoading: false,
+        }).then(res => {
+            // // 停止下拉动作
+            wx.stopPullDownRefresh();
+            if (res.result.length) { // 没有用户
+                const fileArray = res.result;
+                this.setData({
+                    fileArray
+                });
+            }
+        });
+    },
+
+
     toUploadPage: function () {
         console.log('进来了');
         wx.navigateTo({
