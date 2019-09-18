@@ -2,7 +2,7 @@
 <tab tabarr="{{tabArr}}" bind:changetab="pageTabFun"></tab>
 <view wx:if="{{!navTabIndex}}">
   <view class="cul">
-    <view class="cli border-b">
+    <view class="cli border-b" bindtap="openUrl">
       <text>9月15日单元测试</text>
       <image class="topng" mode="widthFix" src="/images/icon/to.png"></image>
     </view>

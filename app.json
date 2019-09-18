@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/results_det/index",
     "pages/classroom/index",
+    "pages/add_students_scores/index",
+    "pages/results_det/index",
     "pages/addtest/index",
     "pages/results/index",
     "pages/index/index",

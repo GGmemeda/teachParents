@@ -29,53 +29,60 @@
         </view>
       </scroll-view>
     </view>
-    <view class="t324">
+    <view class="t324" bindtap="showWin">
       <image class="sdfs" mode="widthFix" src="/images/classroom/gd.png"></image>
     </view>
   </view>
   <view class="clun3">
     <view class="clun3c">
       <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-    <view id="green" class="scroll-view-item bc_green">1</view>
-    <view id="red"  class="scroll-view-item bc_red">2</view>
-    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
-    <view id="blue" class="scroll-view-item bc_blue">4</view>
-    <view id="green" class="scroll-view-item bc_green">1</view>
-    <view id="red"  class="scroll-view-item bc_red">2</view>
-    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
-    <view id="blue" class="scroll-view-item bc_blue">4</view>
-    <view id="green" class="scroll-view-item bc_green">1</view>
-    <view id="red"  class="scroll-view-item bc_red">2</view>
-    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
-    <view id="blue" class="scroll-view-item bc_blue">4</view>
-    <view id="green" class="scroll-view-item bc_green">1</view>
-    <view id="red"  class="scroll-view-item bc_red">2</view>
-    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
-    <view id="blue" class="scroll-view-item bc_blue">4</view>
-    <view id="green" class="scroll-view-item bc_green">1</view>
-    <view id="red"  class="scroll-view-item bc_red">2</view>
-    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
-    <view id="blue" class="scroll-view-item bc_blue">4</view>
-    <view id="green" class="scroll-view-item bc_green">1</view>
-    <view id="red"  class="scroll-view-item bc_red">2</view>
-    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
-    <view id="blue" class="scroll-view-item bc_blue">4</view>
-    <view id="green" class="scroll-view-item bc_green">1</view>
-    <view id="red"  class="scroll-view-item bc_red">2</view>
-    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
-    <view id="blue" class="scroll-view-item bc_blue">4</view>
-    <view id="green" class="scroll-view-item bc_green">1</view>
-    <view id="red"  class="scroll-view-item bc_red">2</view>
-    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
-    <view id="blue" class="scroll-view-item bc_blue">4</view>
-    <view id="green" class="scroll-view-item bc_green">1</view>
-    <view id="red"  class="scroll-view-item bc_red">2</view>
-    <view id="yellow" class="scroll-view-item bc_yellow">3</view>
-    <view id="blue" class="scroll-view-item bc_blue">4</view>
-  </scroll-view>
+        <view class="scroll-view">
+          <view class="scroll-view-item border-b">
+            <text>覃一</text>
+            <text>90</text>
+          </view>
+          <view class="scroll-view-item border-b">
+            <text>覃一</text>
+            <text>90</text>
+          </view>
+          <view class="scroll-view-item border-b">
+            <text>覃一</text>
+            <text class="nolr">未录入</text>
+          </view>
+        </view>
+      </scroll-view>
     </view>
   </view>
   <view class="clun4">
-  撤回
+    <image mode="widthFix" class="isjd" src="/images/classroom/cehui.png"></image>撤回
+  </view>
+  <!-- <view class="clun4">
+    <view class="sjdjdjjd">
+      <image mode="widthFix" class="isjd" src="/images/classroom/edi.png"></image>编辑
+    </view>
+    <view class="sdfsdf"></view>
+    <view class="sjdjdjjd">
+      <image mode="widthFix" class="isjd" src="/images/classroom/del.png"></image>删除
+    </view>
+  </view> -->
+</view>
+
+<view class="zzc" wx:if="{{isShow}}" bindtap="hideWin">
+  <view class="dengji" catchtap>
+    <view class="t1">
+      <view>
+        全部等级
+      </view>
+      <image class="xuanzhuan" mode="widthFix" src="/images/classroom/gd.png"></image>
+    </view>
+    <view class="t2">
+      <view class="fl">全部</view>
+      <view class="fl">A(20)</view>
+      <view class="fl">A(20)</view>
+      <view class="fl">A(20)</view>
+      <view class="fl">A(20)</view>
+      <view class="fl">A(20)</view>
+      <view class="fl">A(20)</view>
+    </view>
   </view>
 </view>

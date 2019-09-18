@@ -1,31 +1,11 @@
-// pages/results/index.js
+// pages/add_students_scores/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tabArr: ["独立考试(30)", "统一考试(30)"],
-    navTabIndex: 0
-  },
 
-  addresults() {
-    wx.navigateTo({
-      url: '/pages/addtest/index'
-    })
-  },
-
-  openUrl() {
-    wx.navigateTo({
-      url: '/pages/results_det/index'
-    })
-  },
-
-  pageTabFun(e) {
-    this.setData({
-      navTabIndex: e.detail.index
-    })
-    console.log(e.detail.index)
   },
 
   /**

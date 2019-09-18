@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isShow: false,
+    thisselectIndex: 0
   },
 
   /**
@@ -13,6 +14,18 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+
+  showWin() {
+    this.setData({
+      isShow: true
+    })
+  },
+
+  hideWin() {
+    this.setData({
+      isShow: false
+    })
   },
 
   /**

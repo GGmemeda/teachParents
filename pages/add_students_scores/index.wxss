@@ -1,0 +1,82 @@
+/* pages/addtest/index.wxss */
+.cbg {
+  background-color: #fff;
+}
+.t1 {
+  display: flex;
+  justify-content: space-between;
+  font-size:32rpx;
+  color:rgba(26,29,30,1);
+  height: 100rpx;
+  align-items: center;
+  padding: 0 32rpx;
+}
+.t2 {
+  height: 100rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.t2 input {
+  height: 100%;
+  font-size:32rpx;
+  color:rgba(26,29,30,1);
+  width: 100%;
+}
+.psoi {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 20rpx;
+  z-index: 100;
+}
+.licontent {
+  display: flex;
+  height: 80rpx;
+  align-items: center;
+  flex: 1;
+}
+.av {
+  width: 80rpx;
+  border-radius: 50%;
+  height: 100%;
+  vertical-align: top;
+}
+.ns {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.inp {
+  width: 180rpx;
+  height: 64rpx;
+  background-color: rgba(242, 242, 242, 1);
+  text-align: center;
+  border-radius: 4rpx;
+  font-size:28rpx;
+  color:rgba(26,29,30,1);
+}
+.nsname {
+  font-size:32rpx;
+  color:rgba(26,29,30,1);
+}
+.nssfz {
+  font-size:28rpx;
+  color:rgba(26,29,30,.6);
+}
+.ns > view {
+  padding-left: 24rpx;
+}
+.for-li {
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+}
+.for-ul {
+  padding-bottom: 120rpx;
+  border-top: 36rpx solid #F3F3F3;
+  padding: 0 32rpx;
+}

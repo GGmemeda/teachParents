@@ -1,0 +1,132 @@
+<!--pages/addtest/index.wxml-->
+<view class="cbg">
+  <view class="t1">
+    <text>考试科目</text>
+    <text>数学</text>
+  </view>
+  <view class="for-ul">
+    <view class="for-li border-b">
+      <view class="licontent">
+        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
+        <view class="ns">
+          <view class="nsname">潘敏</view>
+          <view class="nssfz">身份证号：3849****7944</view>
+        </view>
+        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
+      </view>
+    </view>
+    <view class="for-li border-b">
+      <view class="licontent">
+        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
+        <view class="ns">
+          <view class="nsname">潘敏</view>
+          <view class="nssfz">身份证号：3849****7944</view>
+        </view>
+        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
+      </view>
+    </view>
+    <view class="for-li border-b">
+      <view class="licontent">
+        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
+        <view class="ns">
+          <view class="nsname">潘敏</view>
+          <view class="nssfz">身份证号：3849****7944</view>
+        </view>
+        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
+      </view>
+    </view>
+    <view class="for-li border-b">
+      <view class="licontent">
+        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
+        <view class="ns">
+          <view class="nsname">潘敏</view>
+          <view class="nssfz">身份证号：3849****7944</view>
+        </view>
+        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
+      </view>
+    </view>
+    <view class="for-li border-b">
+      <view class="licontent">
+        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
+        <view class="ns">
+          <view class="nsname">潘敏</view>
+          <view class="nssfz">身份证号：3849****7944</view>
+        </view>
+        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
+      </view>
+    </view>
+    <view class="for-li border-b">
+      <view class="licontent">
+        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
+        <view class="ns">
+          <view class="nsname">潘敏</view>
+          <view class="nssfz">身份证号：3849****7944</view>
+        </view>
+        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
+      </view>
+    </view>
+    <view class="for-li border-b">
+      <view class="licontent">
+        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
+        <view class="ns">
+          <view class="nsname">潘敏</view>
+          <view class="nssfz">身份证号：3849****7944</view>
+        </view>
+        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
+      </view>
+    </view>
+    <view class="for-li border-b">
+      <view class="licontent">
+        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
+        <view class="ns">
+          <view class="nsname">潘敏</view>
+          <view class="nssfz">身份证号：3849****7944</view>
+        </view>
+        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
+      </view>
+    </view>
+    <view class="for-li border-b">
+      <view class="licontent">
+        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
+        <view class="ns">
+          <view class="nsname">潘敏</view>
+          <view class="nssfz">身份证号：3849****7944</view>
+        </view>
+        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
+      </view>
+    </view>
+    <view class="for-li border-b">
+      <view class="licontent">
+        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
+        <view class="ns">
+          <view class="nsname">潘敏</view>
+          <view class="nssfz">身份证号：3849****7944</view>
+        </view>
+        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
+      </view>
+    </view>
+    <view class="for-li border-b">
+      <view class="licontent">
+        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
+        <view class="ns">
+          <view class="nsname">潘敏</view>
+          <view class="nssfz">身份证号：3849****7944</view>
+        </view>
+        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
+      </view>
+    </view>
+    <view class="for-li border-b">
+      <view class="licontent">
+        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
+        <view class="ns">
+          <view class="nsname">潘敏123</view>
+          <view class="nssfz">身份证号：3849****7944</view>
+        </view>
+        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="psoi" wx:if="{{!navTabIndex}}">
+  <view class="cz angular" bindtap="submit">发布成绩</view>
+</view>
