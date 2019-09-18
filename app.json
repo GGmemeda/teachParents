@@ -5,6 +5,7 @@
     "pages/results_det/index",
     "pages/addtest/index",
     "pages/results/index",
+    "pages/login/index",
     "pages/index/index",
     "pages/wanchengzuoye_det/index",
     "pages/wanchengzuoye_video/index",
