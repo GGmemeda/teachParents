@@ -1,5 +1,6 @@
 <!--pages/results_det/index.wxml-->
-<view class="fotercontent">
+<!-- 设置状态 4 未设置规则   3 未录入状态  2录入状态  1 撤回状态  0 发布状态 -->
+<view class="fotercontent" wx:if="{{status == 1 || status == 0}}">
   <view class="jsj">
     <view class="roomname">语文</view>
     <view class="room_clonm">
@@ -66,6 +67,10 @@
     </view>
   </view> -->
 </view>
+<!-- 设置规则 -->
+<no-data wx:if="{{status == 4}}" isopenurl="/pages/set_level/index" urltext="设置等级" morentext="你还没有设置等级，快去设置吧~"></no-data>
+<!-- 未录入状态 -->
+<no-data wx:if="{{status == 3}}" isopenurl="/pages/add_students_scores/index" urltext="设置分数" morentext="你还没有录入学生成绩，快去录入吧~"></no-data>
 
 <view class="zzc" wx:if="{{isShow}}" bindtap="hideWin">
   <view class="dengji" catchtap>

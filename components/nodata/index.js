@@ -17,6 +17,14 @@ Component({
       type: Boolean,
       value: false
     },
+    isopenurl: {
+      type: String,
+      value: ""
+    },
+    urltext: {
+      type: String,
+      value: ""
+    },
     morentext: {
       type: String,
       value: "你还没有绑定学生，快去绑定吧！"
@@ -34,11 +42,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    openUrl() {
+      wx.navigateTo({
+        url: this.data.isopenurl
+      })
+    },
     toBind() {
       if (app.isToken()) {
-        wx.navigateTo({
-          url: '/pages/my_info_add/index',
-        })
+        // wx.navigateTo({
+        //   url: '/pages/my_info_add/index',
+        // })
       } else {
         wx.navigateTo({
           url: '/pages/login/index',

@@ -1,0 +1,51 @@
+/* pages/set_level/index.wxss */
+.ul {
+  background-color: #fff;
+  margin-bottom: 36rpx;
+}
+.li {
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:32rpx;
+  color:rgba(26,29,30,1);
+  padding: 0 32rpx;
+}
+.li .r {
+  color:rgba(26,29,30,.8);
+}
+.li > .cc {
+  flex: 1;
+}
+.dengji {
+  width: 395rpx;
+  text-align: right;
+}
+.cnj {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.cnj input {
+  width: 96rpx;
+  text-align: center;
+}
+.newz {
+  width: 686rpx;
+  height: 100rpx;
+  background-color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+  font-size:28rpx;
+  color:rgba(0,155,253,1);
+  margin: 0 auto 140rpx auto;
+}
+.psoi {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 20rpx;
+  z-index: 100;
+}

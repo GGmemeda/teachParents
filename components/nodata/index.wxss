@@ -6,6 +6,10 @@
   margin-top: 153rpx;
 }
 
+.notext {
+  max-width: 520rpx;
+}
+
 .xscontent {
   color: rgba(26, 29, 30, .4);
   font-size: 28rpx;

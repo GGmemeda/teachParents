@@ -1,35 +1,48 @@
-// pages/results_det/index.js
+// pages/set_level/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    isShow: false,
-    thisselectIndex: 0,
-    status: null, //设置状态 4 未设置规则   3 未录入状态  2录入状态  1 撤回状态  0 发布状态
+    dataList: [
+      {
+        levelName: '',
+        level_min: '',
+        level_max: ''
+      }
+    ]
+  },
+
+  levelInput(e) {
+    let a = e.currentTarget.dataset;
+    this.changeData(a.index, a.name, e.detail.value);
+  },
+
+  changeData(i, name, val) {
+    this.data.dataList[i][name] = val;
+    console.log(this.data.dataList)
+    this.setData({
+      dataList: this.data.dataList
+    })
+  },
+
+  addList() {
+    this.data.dataList.push({
+      levelName: '',
+      level_min: '',
+      level_max: ''
+    })
+    this.setData({
+      dataList: this.data.dataList
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    this.setData({
-      status: options.status
-    })
-  },
 
-  showWin() {
-    this.setData({
-      isShow: true
-    })
-  },
-
-  hideWin() {
-    this.setData({
-      isShow: false
-    })
   },
 
   /**

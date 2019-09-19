@@ -1,11 +1,15 @@
 // pages/classroom/index.js
+let app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    array: [],
+    isLogin: app.isToken() ? true : false,
+    classGradeArray: [],
+    selectIndex: 0
   },
 
   toPage(e) {
@@ -14,11 +18,46 @@ Page({
     })
   },
 
+  getData() {
+    app.HTTP({
+      url: 'wxtapi/list',
+      method: 'GET'
+    }).then(res => {
+      if (res.result) {
+        res.result.forEach(item => {
+          this.data.array.push(item.classGradeName)
+        })
+        this.setData({
+          array: this.data.array,
+          classGradeArray: res.result
+        })
+        this.setHeaderData()
+      }
+    })
+  },
+
+  setHeaderData(obj = this.data.classGradeArray[this.data.selectIndex]) {
+    wx.setStorageSync('Schoolid', obj.classGradeId)
+    wx.setStorageSync('ClassRoomId', obj.id)
+    wx.setStorageSync('Subjects', encodeURI(obj.subjectName))
+  },
+
+  bindPickerChange(e) {
+    if (this.data.selectIndex != e.detail.value) {
+      this.setData({
+        selectIndex: e.detail.value
+      })
+      this.setHeaderData();
+    }
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if (app.isToken()) {
+      this.getData();
+    }
   },
 
   showAction() {
@@ -47,7 +86,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      isLogin: app.isToken()
+    })
   },
 
   /**

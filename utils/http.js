@@ -17,12 +17,20 @@ export class HTTP {
     let _this = this;
     // 获取token,如果有的话就写入header
     let token = wx.getStorageSync("token");
-    let studentid = wx.getStorageSync("studentid");
+    let ClassRoomId = wx.getStorageSync("Schoolid");
+    let Schoolid = wx.getStorageSync("ClassRoomId");
+    let Subjects = wx.getStorageSync("Subjects");
     if (token) {
       header.token = token;
     }
-    if (studentid) {
-      header.studentid = studentid;
+    if (Schoolid) {
+      header.Schoolid = Schoolid;
+    }
+    if (ClassRoomId) {
+      header.ClassRoomId = ClassRoomId;
+    }
+    if (Subjects) {
+      header.Subjects = Subjects;
     }
     // 是否显示Loading
     if (isLoading) {

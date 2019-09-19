@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/classroom/index",
+    "pages/set_level/index",
     "pages/add_students_scores/index",
     "pages/results_det/index",
     "pages/addtest/index",

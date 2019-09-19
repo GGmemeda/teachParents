@@ -2,7 +2,8 @@
 <view class="xscontent" wx:if="{{selectDataType == 'xs1'}}">
   <view style="padding-bottom: 30rpx">
     <image class="xsimg" mode="widthFix" src="/images/icon/noxsgoods.png"></image>
-    <view>{{morentext}}</view>
+    <view class="notext">{{morentext}}</view>
     <view wx:if="{{isshowbottom}}" bindtap="toBind" class="nodatabind cz angular">立即绑定</view>
+    <view wx:if="{{isopenurl}}" bindtap="openUrl" class="nodatabind cz angular">{{urltext}}</view>
   </view>
 </view>

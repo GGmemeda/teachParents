@@ -1,5 +1,5 @@
 <!--pages/classroom/index.wxml-->
-<view class="classroom">
+<view class="classroom" wx:if="{{isLogin}}">
   <view>
     <image class="banner" mode="widthFix" src="/images/classroom/banner.png"></image>
   </view>
@@ -8,18 +8,23 @@
       <view class="tc1">
         <view class="t1content border-b">
           <view class="l1">
-            <text>六(3)班-语文</text>
-            <view class="jsdjf" bindtap="showAction">
-              <image mode="widthFix" src="/images/classroom/gengduo.png"></image>
+            <text>{{array[selectIndex]}}-{{classGradeArray[selectIndex]['subjectName']}}</text>
+            <view class="jsdjf">
+              <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <!-- <view class="picker">
+                  当前选择：{{array[index]}}
+                </view> -->
+                <image mode="widthFix" src="/images/classroom/gengduo.png"></image>
+              </picker>
             </view>
           </view>
           <view class="l2">
-            绵阳实验小学
+            {{classGradeArray[selectIndex]['schoolName']}}
           </view>
         </view>
         <view class="t2con">
           <view class="l a"><image mode="widthFix" src="/images/classroom/cls.png"></image>课堂学生</view>
-          <view class="r a">50人<image mode="widthFix" src="/images/icon/to.png"></image></view>
+          <view class="r a">{{classGradeArray[selectIndex]['count']}}人<image mode="widthFix" src="/images/icon/to.png"></image></view>
         </view>
       </view>
       <view class="tc2"> 
@@ -53,4 +58,4 @@
 </view>
 <!-- 课堂管理弹出框 -->
 <!-- <view class="tanchukuang"></view> -->
-<no-data isshowbottom="{{true}}" morentext="去绑定老师"></no-data>
+<no-data wx-if="{{!isLogin}}" isshowbottom="{{true}}" morentext="去绑定老师"></no-data>

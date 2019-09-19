@@ -2,10 +2,17 @@
 <view class="cbg">
   <view class="t1 border-b">
     <text>考试科目</text>
-    <text>数学</text>
+    <text>{{subjectName}}</text>
+  </view>
+  <view class="t2 border-b">
+    <input value="{{val}}" maxlength="15" bindinput="input" placeholder="请输入考试名称"></input>
   </view>
   <view class="t2">
-    <input value="{{val}}" maxlength="15" bindinput="input" placeholder="请输入考试名称"></input>
+    <picker mode="date" value="{{date}}" start="2010-09-01" end="2020-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        选择考试时间: {{date}}
+      </view>
+    </picker>
   </view>
 </view>
 <view class="psoi" wx:if="{{!navTabIndex}}">

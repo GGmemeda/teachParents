@@ -30,3 +30,7 @@
   bottom: 0;
   padding-bottom: 20rpx;
 }
+.picker {
+  font-size:32rpx;
+  color:rgba(26,29,30,1);
+}

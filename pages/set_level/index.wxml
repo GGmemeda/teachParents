@@ -1,0 +1,56 @@
+<view class="ul">
+  <view class="li">
+    <view class="r">等级名称</view>
+    <view class="l">A</view>
+  </view>
+  <view class="li">
+    <view class="r">等级分数段（分）</view>
+    <view class="l">
+      80 - 100
+    </view>
+  </view>
+</view>
+
+<view class="ul" wx:for="{{dataList}}" wx:key="{{index}}">
+  <view class="li">
+    <view class="r cc">等级名称</view>
+    <view class="l cc">
+      <input class="dengji" 
+              placeholder="请输入等级名称，如：A，B" 
+              value="{{item.levelName}}" 
+              maxlength="1"
+              data-index="{{index}}"
+              data-name="levelName"
+              bindinput="levelInput"></input>
+    </view>
+  </view>
+  <view class="li">
+    <view class="r cc">等级分数段（分）</view>
+    <view class="l cc">
+      <view class="cnj">
+        <input class="one" 
+                value="{{item.level_min}}" 
+                placeholder="请输入" 
+                data-index="{{index}}"
+                data-name="level_min"
+                bindinput="levelInput"
+                maxlength="3"></input> - <input class="two" 
+                                                value="{{item.level_max}}" 
+                                                placeholder="请输入" 
+                                                data-index="{{index}}"
+                                                data-name="level_max"
+                                                bindinput="levelInput"
+                                                maxlength="3"></input>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class="newz" bindtap="addList">
+  新增
+</view>
+
+<view class="psoi" wx:if="{{!navTabIndex}}">
+  <view class="cz angular" bindtap="submit">确定</view>
+</view>
