@@ -1,0 +1,86 @@
+/* pages/notice/index.wxss */
+.list-view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.listman{
+    margin-top: 43rpx;
+    width:686rpx;
+    height:301rpx;
+    background:rgba(255,255,255,1);
+    border-radius:12rpx;
+    padding: 32rpx;
+}
+.tit{
+    font-size:36rpx;
+    font-family:PingFangSC;
+    font-weight:500;
+    color:rgba(51,57,71,1);
+    line-height:32rpx;
+    margin-bottom: 32rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.tit-time{
+    font-size:28rpx;
+    font-family:PingFangSC;
+    font-weight:400;
+    color:rgba(44,50,65,.6);
+    line-height:25rpx
+}
+.det{
+    margin-bottom: 32rpx;
+}
+.content-words{
+    font-size:28rpx;
+    font-family:PingFangSC;
+    font-weight:400;
+    color:rgba(44,50,65,1);
+    line-height:40rpx;
+}
+.bottom-status{
+    padding-top: 32rpx;
+    border-top: 1px solid #E4E4E4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.left-unread{
+    font-size:28rpx;
+    font-family:PingFangSC;
+    font-weight:400;
+    color:rgba(25,164,253,1);
+    line-height:28rpx;
+}
+.right-arrow{
+    width:20rpx;
+    height:20rpx;
+}
+.withdrawn{
+    background:rgba(255,255,255,1);
+}
+.withdrawn .tit{
+    color:rgba(51,57,71,.4)
+}
+.withdrawn .content-words{
+    color:rgba(44,50,65,.4);
+}
+.withdrawn .left-unread{
+    color:rgba(26,29,30,.4);
+}
+.bottom-button{
+    position: fixed;
+    bottom: 0rpx;
+    padding: 0 40px 20rpx 40rpx;
+    background: #fff;
+}
+.list-view{
+    overflow-x:hidden ;
+    overflow-y: auto;
+    position: fixed;
+    left:0;
+    right:0;
+    bottom:130rpx;
+    top:0;
+}

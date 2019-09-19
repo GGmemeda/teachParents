@@ -1,0 +1,33 @@
+<!--pages/file_upload/index.wxml-->
+
+<view style="height: 100vh">
+    <view class="list-view">
+        <view class="listman border-b "
+              wx:for="{{noticeArray}}"
+              wx:key="{{index}}">
+            <view class="list"
+                  bindtap="openUrls"
+                  data-id="{{item.id}}">
+                <view class="l">
+                    <view class="tit">
+                        {{item.title}}
+                        <text class="tit-time">{{item.time}}</text>
+                    </view>
+                    <view class="det">
+                        <text class="content-words">{{item.content}}</text>
+                    </view>
+                    <view class="bottom-status">
+                        <text class="left-unread"> {{item.unread}}</text>
+                            <image class="right-arrow" src="/images/icon/to.png"></image>
+                       </view>
+                </view>
+            </view>
+        </view>
+        <no-data morentext="暂无数据！" wx:if="{{noticeArray.length<1}}"></no-data>
+    </view>
+    <view class="bottom-button">
+        <view class="cz angular file-bottom-button" bindtap="toNoticePage">
+            发布通知
+        </view>
+    </view>
+</view>

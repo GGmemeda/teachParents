@@ -1,0 +1,73 @@
+<!--pages/create_notice/index.wxml-->
+<view style="height: 100vh;background: #fff">
+    <view class="main-content">
+        <view class="top-send">
+            <view class="form-content">
+                <view class="form-title">
+                    <input
+                            bindinput="onTitleChange"
+                            placeholder-style="color:rgba(26,29,30,.4);" class="title-input" maxlength="20"
+                            placeholder="请填写通知标题(20字以内)"></input>
+                </view>
+                <view class="form-inner">
+                    <view class="textarea-box {{chooseFiles.length>0||imageFilePaths.length>0?'hasimage-textarea':''}}">
+                        <textarea
+                                maxlength="600"
+                                placeholder-style="color:rgba(26,29,30,.4);"
+                                class="content-textarea {{chooseFiles.length>0||imageFilePaths.length>0?'image-textarea':''}}"
+                                value="{{textareaVal}}"
+                                bindinput="onTextareaChange"
+                                type='text' fixed
+                                ></textarea>
+                        <text wx:if="{{textareaVal.length<1}}" class="textarea-placeholder">请填写通知内容</text>
+                        <text class="word-sum">
+                            <text class="{{textareaVal.length>0?'text-active':''}}">{{textareaVal.length}}</text>/600
+                        </text>
+                    </view>
+                    <view class="image-box">
+                        <view class="image-box-item" wx:for="{{imageFilePaths}}" wx:key="{{index}}">
+                            <image src="{{item}}"></image>
+                            <view class="imageDelete" bindtap="deleteFile" data-index="{{index}}">
+                                <image src="/images/create_notice/delete.png"></image>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="file-box">
+                        <view class="listman border-b"
+                              wx:for="{{chooseFiles}}"
+                              wx:key="{{index}}">
+                            <view class="list"
+                                  bindtap="openUrls"
+                                  data-id="{{item.id}}">
+                                <view class="r">
+                                    <image class="left-image" mode="aspectFill" src="{{imageFileArray[item.suffix]}}"></image>
+                                </view>
+                                <view class="l">
+                                    <view class="tit">{{item.name}}</view>
+                                    <view class="det">
+                                        <text>{{item.size}}</text>
+                                        <text>{{item.teacher}}</text>
+                                        <text>{{item.updateTime}}</text>
+                                    </view>
+                                </view>
+                                <view class="imageDelete" bindtap="deleteChooseFile" data-index="{{index}}">
+                                    <image src="/images/create_notice/delete.png"></image>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="bottom-send">
+            <view class="left-choose">
+                <image src="/images/create_notice/pic.png" bindtap="onChoosePic"></image>
+                <image src="/images/create_notice/file.png" bindtap="toChooseFile"></image>
+            </view>
+            <view class="send-button {{textareaVal&&titleVal?'send-button_active':''}}">
+                发布
+            </view>
+        </view>
+    </view>
+
+</view>

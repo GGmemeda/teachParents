@@ -1,0 +1,96 @@
+/* pages/choose_file/index.wxss */
+
+.listman {
+    overflow: hidden;
+    padding-bottom: 40rpx;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40rpx;
+    align-items: center;
+}
+
+.list .l {
+    width: 526rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.list .r {
+    width: 65rpx;
+    height:80rpx;
+}
+
+.list .r image {
+    width: 100%;
+    height: 100%;
+}
+
+.list  .tit {
+    color: rgba(26, 29, 30, 1);
+    font-size: 32rpx;
+    text-align: justify;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+}
+
+.list  .det {
+    color: rgba(26, 29, 30, .6);
+    font-size: 24rpx;
+    text-align: left;
+    margin-top: 16rpx;
+}
+.det text+text{
+  margin-left: 15px;
+}
+
+.bottom-button{
+    position: fixed;
+    bottom: 0rpx;
+    padding: 0 40px 20rpx 40rpx;
+    background: #fff;
+}
+.list-view{
+    overflow-x:hidden ;
+    overflow-y: auto;
+    position: fixed;
+    left:0;
+    right:0;
+    bottom:130rpx;
+    top:0;
+}
+checkbox {
+    width: 40rpx;
+    height: 40rpx;
+}
+.choose-item{
+    margin: 0 0 0 30rpx;
+    border-radius: 50%;
+}
+checkbox::before{
+    right: 1px!important;
+    top:50%!important;
+    margin-top: -16rpx!important;
+}
+/*checkbox 选项框大小  */
+checkbox .wx-checkbox-input {
+    width: 40rpx !important;
+    height: 40rpx!important;
+}
+checkbox .wx-checkbox-input{
+    border-radius: 50%!important;
+}
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+    background-color: #009bfd !important;
+    border:1px solid #009bfd!important;
+}
+checkbox.olive[checked] .wx-checkbox-input{
+    background-color: #009bfd;
+}

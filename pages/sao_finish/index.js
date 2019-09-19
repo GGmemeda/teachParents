@@ -62,8 +62,8 @@ Page({
 
     },
     onUploadFilePage: function () {
-        wx.navigateTo({
-            url: '/pages/file_upload/index'
+        wx.navigateBack({
+            delta: 2
         });
     }
 });

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/classroom/index",
     "pages/set_level/index",
     "pages/add_students_scores/index",
@@ -7,7 +8,6 @@
     "pages/addtest/index",
     "pages/results/index",
     "pages/login/index",
-    "pages/index/index",
     "pages/wanchengzuoye_det/index",
     "pages/wanchengzuoye_video/index",
     "pages/wanchengzuoye_images/index",
@@ -31,7 +31,10 @@
     "pages/index_details/index",
     "pages/sao_finish/index",
     "pages/sao_page/index",
-    "pages/file_upload/index"
+    "pages/file_upload/index",
+    "pages/create_notice/index",
+    "pages/choose_file/index",
+    "pages/notice/index"
   ],
   "permission": {
     "scope.userLocation": {

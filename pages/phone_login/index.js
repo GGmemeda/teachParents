@@ -83,6 +83,7 @@ Page({
         app.HTTP({
             url: 'wxtapi/login',
             method: 'POST',
+            title: '发送验证码中...',
             data: {
                 phone: this.data.phone,
                 wxtCode,

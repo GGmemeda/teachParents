@@ -1,0 +1,34 @@
+<!--pages/choose_file/index.wxml-->
+
+<view style="height: 100vh;background: #fff">
+    <view class="list-view">
+        <checkbox-group bindchange="onMulChoose" value="{{mulVal}}">
+        <view class="listman border-b"
+              wx:for="{{fileArray}}"
+              wx:key="{{index}}">
+            <view class="list"
+                  data-id="{{item.id}}">
+                <checkbox  class="choose-item" value="{{item.id}}" checked="{{item.checked}}" >
+                </checkbox>
+                <view class="r">
+                    <image class="left-image" mode="aspectFill" src="{{imageArray[item.suffix]}}"></image>
+                </view>
+                <view class="l">
+                    <view class="tit">{{item.name}}</view>
+                    <view class="det">
+                        <text>{{item.size}}</text>
+                        <text>{{item.teacher}}</text>
+                        <text>{{item.updateTime}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        </checkbox-group>
+        <no-data morentext="暂无数据！" wx:if="{{fileArray.length<1}}"></no-data>
+    </view>
+    <view class="bottom-button" wx:if="{{fileArray.length>0}}">
+        <view class="cz angular file-bottom-button" bindtap="toUploadPage">
+            选好了 <text wx:if="{{mulVal.length>0}}">({{mulVal.length}})</text>
+        </view>
+    </view>
+</view>
