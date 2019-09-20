@@ -1,42 +1,19 @@
-// pages/my_feedback/index.js
-let app = getApp();
+// pages/notice_detail/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    helpList: []
-  },
+    chooseFiles:[]
 
-  callPhone() {
-    wx.makePhoneCall({
-      phoneNumber: '18081003716'
-    })
-  },
-
-  toPage(e) {
-    wx.navigateTo({
-      url: `/pages/my_feedback_details/index?id=${e.currentTarget.dataset.id}`,
-    })
-  },
-
-  getReadyData() {
-    app.HTTP({
-      url: "wxtapi/user/helpCenter",
-      method: "GET"
-    }).then(res => {
-      this.setData({
-        helpList: res.result.helpList.records
-      })
-    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getReadyData();
+
   },
 
   /**

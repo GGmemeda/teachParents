@@ -43,17 +43,15 @@ Page({
       return false;
     }
     app.HTTP({
-      url: "wxapi/user/modifyUserName",
-      method: "GET",
+      url: "wxtapi/user",
+      method: "post",
       data: {
-        "newName": this.data.nameVal
+        "nickname": this.data.nameVal
       }
     }).then(res => {
-      if (res.result) {
         wx.navigateBack({
           delta: 1,
         })
-      }
     })
     
   },

@@ -12,7 +12,7 @@ Page({
   getData(newId) {
     let _this = this;
     app.HTTP({
-      url: 'wxapi/home/getNewsById',
+      url: 'wxtapi/home/getNewsById',
       title: '获取新闻数据中...',
       method: "GET",
       data: {

@@ -1,0 +1,16 @@
+<!--pages/album_list/index.wxml-->
+<view style="overflow: hidden;min-height: 100vh;background: #fff">
+        <view class="album_list">
+            <view class="list-pic" wx:for="{{albumList}}">
+                <image src="{{item.headPic}}"></image>
+                <view>
+                    <text class="list-name">{{item.name}}</text>
+                    <text class="list-time"></text>
+                </view>
+                <view class="list-des">{{item.des}}</view>
+                <view class="list-content">
+                    <image wx:for="{{item.url}}" src="{{item}}"></image>
+                </view>
+            </view>
+        </view>
+</view>

@@ -14,7 +14,7 @@
       <text>用户名</text>
       <view>
         <view class="itext">
-          {{userInfo.name}}
+          {{userInfo.nickname}}
         </view>
         <image class="myr" mode="widthFix" src="/images/icon/to.png"></image>
       </view>
