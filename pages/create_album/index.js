@@ -1,4 +1,4 @@
-// pages/my_help_center/index.js
+// pages/create_album/index.js
 let app = getApp();
 Page({
 
@@ -47,7 +47,7 @@ Page({
     selectImg() {
         let _this = this;
         wx.chooseImage({
-            count: 5,
+            count: 9,
             sizeType: ['original'],
             sourceType: ['album', 'camera'],
             success(res) {
@@ -90,56 +90,60 @@ Page({
     validation() {
         return this.data.val ? true : false;
     },
-
+    createPhoto(imgStr){
+        const url=imgStr?imgStr.join(";"):'';
+        const data= {
+            des: this.data.val,
+        };
+        if(url){
+            data.imgStr=imgStr;
+        }
+        app.HTTP({
+            url: 'wxtapi/photo',
+            method: "post",
+            title: "上传中...",
+            data:data
+        }).then(resut => {
+            console.log(resut);
+            wx.showToast({
+                title: '上传成功！'
+            });
+            setTimeout(function () {
+                wx.navigateBack({
+                    delta: 1,
+                });
+            }, 1500);
+        });
+    },
     submitBack() {
         let imgLen = this.data.adviceImgList.length;
         let loading = 0;
         let imgStr = [];
         let _this = this;
-        if (imgLen < 1) {
-            wx.showToast({
-                title: '请选择图片',
-                icon: 'none',
-            });
+        if (!this.data.val) {
             return;
         }
         // 提交
         if (this.validation()) {
-            wx.showLoading({
-                title: "图片上传中...",
-                mask: true,
-            });
-            for (let i = 0; i < imgLen; i++) {
-                app.uploadImg("data:image/png;base64," + this.data.adviceImgList[i].base64, function (src) {
-                    imgStr.push(src);
-                    loading++;
-                    if (loading >= imgLen) {
-                        wx.hideLoading();
-                        app.HTTP({
-                            url: 'wxtapi/user/feedback',
-                            method: "GET",
-                            title: "反馈中...",
-                            data: {
-                                opinion: _this.data.val,
-                                picUrl: imgStr.join(";"),
-                                phone: _this.data.phone
-                            }
-                        }).then(resut => {
-                            console.log(resut);
-                            if (resut.result) {
-                                wx.showToast({
-                                    title: '反馈成功！'
-                                });
-                                setTimeout(function () {
-                                    wx.navigateBack({
-                                        delta: 1,
-                                    });
-                                }, 1500);
-                            }
-                        });
-                    }
+            if(imgLen>0){
+                wx.showLoading({
+                    title: "图片上传中...",
+                    mask: true,
                 });
+                for (let i = 0; i < imgLen; i++) {
+                    app.uploadImg("data:image/png;base64," + this.data.adviceImgList[i].base64, function (src) {
+                        imgStr.push(src);
+                        loading++;
+                        if (loading >= imgLen) {
+                            wx.hideLoading();
+                            _this.createPhoto(imgStr)
+                        }
+                    });
+                }
+            }else{
+                    this.createPhoto();
             }
+
         } else {
             wx.showToast({
                 title: '数据格式不正确',

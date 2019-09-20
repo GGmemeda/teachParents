@@ -17,7 +17,7 @@ Page({
 
   getReadyData(helpId) {
     app.HTTP({
-      url: "wxapi/user/gethelpCenterById",
+      url: "wxtapi/user/helpCenterById",
       method: "GET",
       data: {
         helpId

@@ -1,0 +1,35 @@
+<!--pages/notice_detail/index.wxml-->
+<view>
+    <view class="content">
+    <view class="des-content">
+        请各位家长明天到学校参加家长会，无法参加的请及时跟班主任沟通说明情况！请各位家长明天到学校参加家长会，无法参加的请及时跟班主任沟通说明情况!
+    </view>
+           <view class="image-part">
+               <image src="/images/classroom/banner.png"></image>
+           </view>
+    <view class="file-box">
+        <view class="listman border-b"
+              wx:for="{{chooseFiles}}"
+              wx:key="{{index}}">
+            <view class="list"
+                  bindtap="openUrls"
+                  data-id="{{item.id}}">
+                <view class="r">
+                    <image class="left-image" mode="aspectFill" src="{{imageFileArray[item.suffix]}}"></image>
+                </view>
+                <view class="l">
+                    <view class="tit">{{item.name}}</view>
+                    <view class="det">
+                        <text>{{item.size}}</text>
+                        <text>{{item.teacher}}</text>
+                        <text>{{item.updateTime}}</text>
+                    </view>
+                </view>
+                <view class="imageDelete" bindtap="deleteChooseFile" data-index="{{index}}">
+                    <image src="/images/create_notice/delete.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    </view>
+</view>

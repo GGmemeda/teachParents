@@ -18,7 +18,7 @@ Page({
   getReadyData() {
     let _this = this;
     app.HTTP({
-      url: "wxapi/user/myInfo",
+      url: "wxtapi/user",
       isLoading: false,
       method: "GET"
     }).then(res => {

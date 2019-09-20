@@ -64,37 +64,37 @@ Page({
 
   // 获取数据
   getStudentList() {
-    app.HTTP({
-      url: 'wxapi/user/getStudentInfoList',
-      method: "GET",
-      isLoading: false,
-    }).then(res => {
-      // 隐藏导航栏加载框
-      wx.hideNavigationBarLoading();
-      // // 停止下拉动作
-      wx.stopPullDownRefresh();
-      if (res.result.records.length) { // 没有用户
-        // 判断本地是否存在studentid
-        let studentid = wx.getStorageSync("studentid");
-        let studentList = res.result.records;
-        this.setData({
-          isStudentData: true,
-          userInfo: studentList
-        })
-        if (!studentid) { // 如果存在说明选择过获取第一次过
-          wx.setStorageSync("studentid", studentList[0].id);
-        }
-        this.getSelectStudent();
-        this.changeArr();
-        
-        this.getIndexData();
-      } else {
-        this.getIndexData();
-        this.setData({
-          isStudentData: false
-        })
-      }
-    })
+    // app.HTTP({
+    //   url: 'wxapi/user/getStudentInfoList',
+    //   method: "GET",
+    //   isLoading: false,
+    // }).then(res => {
+    //   // 隐藏导航栏加载框
+    //   wx.hideNavigationBarLoading();
+    //   // // 停止下拉动作
+    //   wx.stopPullDownRefresh();
+    //   if (res.result.records.length) { // 没有用户
+    //     // 判断本地是否存在studentid
+    //     let studentid = wx.getStorageSync("studentid");
+    //     let studentList = res.result.records;
+    //     this.setData({
+    //       isStudentData: true,
+    //       userInfo: studentList
+    //     })
+    //     if (!studentid) { // 如果存在说明选择过获取第一次过
+    //       wx.setStorageSync("studentid", studentList[0].id);
+    //     }
+    //     this.getSelectStudent();
+    //     this.changeArr();
+    //
+    //     this.getIndexData();
+    //   } else {
+    //     this.getIndexData();
+    //     this.setData({
+    //       isStudentData: false
+    //     })
+    //   }
+    // })
   },
 
   // 改变数据
@@ -192,7 +192,7 @@ Page({
   getIndexData() {
     let banner = new Promise((resolve, reject) => {
       app.HTTP({
-        url: 'wxapi/home/getBannerPic',
+        url: 'wxtapi/home/getBannerPic',
         isLoading: false,
         method: "GET"
       }).then(res => {
@@ -206,7 +206,7 @@ Page({
 
     let navs = new Promise((resolve, reject) => {
       app.HTTP({
-        url: 'wxapi/home/getNewType',
+        url: 'wxtapi/home/getNewType',
         isLoading: false,
         method: "GET"
       }).then(res => {
@@ -231,7 +231,7 @@ Page({
 
   getNews(resolve, dicId = wx.getStorageSync("newsid") ? wx.getStorageSync("newsid") : 24) {
     app.HTTP({
-      url: 'wxapi/home/getNews',
+      url: 'wxtapi/home/getNews',
       method: "GET",
       isLoading: false,
       data: {
@@ -267,7 +267,7 @@ Page({
    */
   onShow: function () {
     if (wx.getStorageSync("token")) {
-      this.getStudentList();
+      this.getIndexData();
     } else {
       this.getIndexData();
     }
@@ -294,7 +294,7 @@ Page({
     if (app.isToken()) {
       // 显示顶部刷新图标
       wx.showNavigationBarLoading();
-      this.getStudentList();
+      this.getIndexData();
     }
   },
 

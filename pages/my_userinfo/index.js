@@ -24,7 +24,7 @@ Page({
   getUserData() {
     let _this = this;
     app.HTTP({
-      url: "wxapi/user/myInfo",
+      url: "wxtapi/user",
       method: "GET"
     }).then(res => {
       this.setData({
