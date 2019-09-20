@@ -1,18 +1,54 @@
 // pages/add_students_scores/index.js
+let app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    name: '',
+    isShow: false,
+    kemuArr: []
+  },
 
+  showWin() {
+    this.setData({
+      isShow: true
+    })
+  },
+
+  hideWin() {
+    this.setData({
+      isShow: false
+    })
+  },
+
+  getLevelList() {
+    app.HTTP({
+      url: `wxtapi/tea/erl`,
+      method: 'GET',
+      data: {
+        teacherExamId: this.id
+      }
+    }).then(res => {
+      res.result.map(item => {
+        return {
+          ...item,
+          len: 0
+        }
+      })
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.id = options.id;
+    this.setData({
+      name: decodeURI(wx.getStorageSync("Subjects"))
+    })
+    this.getLevelList();
   },
 
   /**

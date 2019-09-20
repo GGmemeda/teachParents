@@ -2,8 +2,25 @@
 <view class="cbg">
   <view class="t1">
     <text>考试科目</text>
-    <text>数学</text>
+    <text>{{name}}</text>
   </view>
+  <view class="clun2">
+    <view class="t123">
+      <scroll-view scroll-x bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+        <view class="pasdjf">
+          <view class="lanm">A(30)</view>
+          <view class="lanm">A(30)</view>
+          <view class="lanm">A(30)</view>
+          <view class="lanm">A(30)</view>
+          <view class="lanm">A(30)</view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="t324" bindtap="showWin">
+      <image class="sdfs" mode="widthFix" src="/images/classroom/gd.png"></image>
+    </view>
+  </view>
+  <view style="border-bottom: 36rpx solid #F3F3F3;"></view>
   <view class="for-ul">
     <view class="for-li border-b">
       <view class="licontent">
@@ -129,4 +146,24 @@
 </view>
 <view class="psoi" wx:if="{{!navTabIndex}}">
   <view class="cz angular" bindtap="submit">发布成绩</view>
+</view>
+
+<view class="zzc" wx:if="{{isShow}}" bindtap="hideWin">
+  <view class="dengji" catchtap>
+    <view class="t1s">
+      <view>
+        全部等级
+      </view>
+      <image class="xuanzhuan" mode="widthFix" src="/images/classroom/gd.png"></image>
+    </view>
+    <view class="t2s">
+      <view class="fl">全部</view>
+      <view class="fl">A(20)</view>
+      <view class="fl">A(20)</view>
+      <view class="fl">A(20)</view>
+      <view class="fl">A(20)</view>
+      <view class="fl">A(20)</view>
+      <view class="fl">A(20)</view>
+    </view>
+  </view>
 </view>

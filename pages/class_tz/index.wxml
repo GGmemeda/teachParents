@@ -1,0 +1,25 @@
+<!--pages/my_info/index.wxml-->
+<view class="info_content">
+  <view class="info_list" wx:for="{{dataList}}" wx:key="{{index}}">
+    <view class="il_center">
+      <view class="tp1">
+        <text>{{item.name}}</text>
+        <text>{{item.time}}</text>
+      </view>
+      <view class="tp2">
+        {{item.content}}
+      </view>
+      <view class="border-b border-b-s"></view>
+      <view class="tp3" bindtap="openDet" data-id="{{item.id}}">
+        <view>查看详情</view>
+        <view class="tp3cen">
+          <text class="hd"></text>
+        </view>
+        <image class="to" src="/images/icon/to.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 没有数据 -->
+<no-data morentext="暂无通知" wx:if="{{!dataList.length}}"></no-data>

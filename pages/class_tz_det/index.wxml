@@ -1,0 +1,26 @@
+<view class="t1">
+  <view class="l">
+    <image src="{{dataList.pic}}" mode="widthFix"></image>
+  </view>
+  <view class="r">
+    <view class="n">{{dataList.name}}</view>
+    <view class="t">{{dataList.time}}</view>
+  </view>
+</view>
+
+<view class="content">
+  <view class="textarea">{{dataList.content}}</view>
+  <view class="cimgcontent">
+    <image wx:for="{{dataList.picList}}" wx:key="{{index}}" class="cimg" src="{{item}}" mode="widthFix"></image>
+  </view>
+</view>
+
+<view class="file">
+  <view class="li border-b" wx:for="{{dataList.fileList}}">
+    <image class="lr" src="/images/icon/default_avator.png"></image>
+    <view class="rl">
+      <view class="tx1">{{item.fileName}}</view>
+      <view class="tx2">{{item.size}}   {{item.name}}  {{item.time}}</view>
+    </view>
+  </view>
+</view>
