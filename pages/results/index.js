@@ -19,14 +19,21 @@ Page({
   },
 
   openUrl(e) {
+    // 判断当前是独立考试还是统一考试，需要把tokenUserType传递下去
+    let tokenUserType = "";
+    if (this.data.navTabIndex) { // 统一考试
+      tokenUserType = true;
+    } else {
+      tokenUserType = false;
+    }
     let a = e.currentTarget.dataset;
     if (a.status == 2) { // 录入状态,直接跳转录入页面
       wx.navigateTo({
-        url: `/pages/add_students_scores/index?id=${a.id}`
+        url: `/pages/add_students_scores/index?id=${a.id}&tokenUserType=${tokenUserType}`
       })
     } else {
       wx.navigateTo({
-        url: `/pages/results_det/index?status=${a.status}&id=${a.id}`
+        url: `/pages/results_det/index?status=${a.status}&id=${a.id}&tokenUserType=${tokenUserType}`
       })
     }
   },

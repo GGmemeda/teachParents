@@ -20,10 +20,10 @@ Page({
     let list = this.data.dataList.map(item => {
       return {
         grade: item.levelName,
-        id: '',
+        id: item.id ? item.id : '',
         maxPrice: item.level_max,
         minPrice: item.level_min,
-        teacherExamId: this.id
+        teacherExamId: item.teacherExamId ? item.teacherExamId : this.id
       }
     })
     app.HTTP({
@@ -35,7 +35,7 @@ Page({
       })
       setTimeout(() => {
         wx.navigateBack({
-          delta: 2,
+          delta: this.isedit ? 1 : 2,
         })
       }, 1500)
     })
@@ -101,11 +101,39 @@ Page({
     })
   },
 
+  getList() {
+    if (this.isedit) {
+      app.HTTP({
+        url: 'wxtapi/tea/erl',
+        method: 'GET',
+        data: {
+          teacherExamId: this.id
+        }
+      }).then(res => {
+        let dataList = res.result.map(item => {
+          return {
+            levelName: item.grade,
+            level_min: item.minPrice,
+            level_max: item.maxPrice,
+            ...item
+          }
+        })
+        this.setData({
+          dataList
+        })
+      })
+    }
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.isedit = options.isedit;
     this.id = options.id;
+    if (this.isedit) {
+      this.getList();
+    }
   },
   
 

@@ -2,17 +2,18 @@
 <view class="cbg">
   <view class="t1">
     <text>考试科目</text>
-    <text>{{name}}</text>
+    <text>{{name}}{{navLength}}</text>
   </view>
   <view class="clun2">
     <view class="t123">
       <scroll-view scroll-x bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
         <view class="pasdjf">
-          <view class="lanm">A(30)</view>
-          <view class="lanm">A(30)</view>
-          <view class="lanm">A(30)</view>
-          <view class="lanm">A(30)</view>
-          <view class="lanm">A(30)</view>
+          <view class="lanm {{slectIndex == index ? 'active' : ''}}" 
+                wx:for="{{kemuArr}}" 
+                data-index="{{index}}"
+                data-name="{{item.a}}"  
+                bindtap="selectLanmu"
+                wx:key="{{index}}">{{item.a}}({{item.b}})</view>
         </view>
       </scroll-view>
     </view>
@@ -22,127 +23,27 @@
   </view>
   <view style="border-bottom: 36rpx solid #F3F3F3;"></view>
   <view class="for-ul">
-    <view class="for-li border-b">
+    <view class="for-li border-b" 
+          wx:for="{{luruArr}}" 
+          wx:key="{{index}}">
       <view class="licontent">
-        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
+        <image class="av" mode="widthFix" src="{{item.headPic}}"></image>
         <view class="ns">
-          <view class="nsname">潘敏</view>
-          <view class="nssfz">身份证号：3849****7944</view>
+          <view class="nsname">{{item.name}}</view>
+          <view class="nssfz">身份证号：{{item.idCards}}</view>
         </view>
-        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
-      </view>
-    </view>
-    <view class="for-li border-b">
-      <view class="licontent">
-        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
-        <view class="ns">
-          <view class="nsname">潘敏</view>
-          <view class="nssfz">身份证号：3849****7944</view>
-        </view>
-        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
-      </view>
-    </view>
-    <view class="for-li border-b">
-      <view class="licontent">
-        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
-        <view class="ns">
-          <view class="nsname">潘敏</view>
-          <view class="nssfz">身份证号：3849****7944</view>
-        </view>
-        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
-      </view>
-    </view>
-    <view class="for-li border-b">
-      <view class="licontent">
-        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
-        <view class="ns">
-          <view class="nsname">潘敏</view>
-          <view class="nssfz">身份证号：3849****7944</view>
-        </view>
-        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
-      </view>
-    </view>
-    <view class="for-li border-b">
-      <view class="licontent">
-        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
-        <view class="ns">
-          <view class="nsname">潘敏</view>
-          <view class="nssfz">身份证号：3849****7944</view>
-        </view>
-        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
-      </view>
-    </view>
-    <view class="for-li border-b">
-      <view class="licontent">
-        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
-        <view class="ns">
-          <view class="nsname">潘敏</view>
-          <view class="nssfz">身份证号：3849****7944</view>
-        </view>
-        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
-      </view>
-    </view>
-    <view class="for-li border-b">
-      <view class="licontent">
-        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
-        <view class="ns">
-          <view class="nsname">潘敏</view>
-          <view class="nssfz">身份证号：3849****7944</view>
-        </view>
-        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
-      </view>
-    </view>
-    <view class="for-li border-b">
-      <view class="licontent">
-        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
-        <view class="ns">
-          <view class="nsname">潘敏</view>
-          <view class="nssfz">身份证号：3849****7944</view>
-        </view>
-        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
-      </view>
-    </view>
-    <view class="for-li border-b">
-      <view class="licontent">
-        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
-        <view class="ns">
-          <view class="nsname">潘敏</view>
-          <view class="nssfz">身份证号：3849****7944</view>
-        </view>
-        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
-      </view>
-    </view>
-    <view class="for-li border-b">
-      <view class="licontent">
-        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
-        <view class="ns">
-          <view class="nsname">潘敏</view>
-          <view class="nssfz">身份证号：3849****7944</view>
-        </view>
-        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
-      </view>
-    </view>
-    <view class="for-li border-b">
-      <view class="licontent">
-        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
-        <view class="ns">
-          <view class="nsname">潘敏</view>
-          <view class="nssfz">身份证号：3849****7944</view>
-        </view>
-        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
-      </view>
-    </view>
-    <view class="for-li border-b">
-      <view class="licontent">
-        <image class="av" mode="widthFix" src="/images/icon/default.jpg"></image>
-        <view class="ns">
-          <view class="nsname">潘敏123</view>
-          <view class="nssfz">身份证号：3849****7944</view>
-        </view>
-        <input class="inp" maxlength="3" placeholder="请输入分数"></input>
+        <input class="inp" 
+                bindblur="uploadFs"
+                data-stutdentName="{{item.name}}"
+                data-stutdentId="{{item.id}}"
+                data-schoolTranscriptId="{{item.schoolTranscriptId}}"
+                value="{{item.result}}" 
+                maxlength="3" 
+                placeholder="请输入分数"></input>
       </view>
     </view>
   </view>
+  <no-data wx:if="{{!luruArr.length}}" morentext="暂无数据！"></no-data>
 </view>
 <view class="psoi" wx:if="{{!navTabIndex}}">
   <view class="cz angular" bindtap="submit">发布成绩</view>
@@ -152,18 +53,17 @@
   <view class="dengji" catchtap>
     <view class="t1s">
       <view>
-        全部等级
+        全部等级<image bindtap="openEdit" class="edit" mode="widthFix" src="/images/classroom/edit.png"></image>
       </view>
       <image class="xuanzhuan" mode="widthFix" src="/images/classroom/gd.png"></image>
     </view>
     <view class="t2s">
-      <view class="fl">全部</view>
-      <view class="fl">A(20)</view>
-      <view class="fl">A(20)</view>
-      <view class="fl">A(20)</view>
-      <view class="fl">A(20)</view>
-      <view class="fl">A(20)</view>
-      <view class="fl">A(20)</view>
+      <view class="fl {{slectIndex == index ? 'actives' : ''}}"
+            wx:for="{{kemuArr}}" 
+            data-index="{{index}}"
+            data-name="{{item.a}}"
+            bindtap="selectLanmu"
+            wx:key="{{index}}">{{item.a}}{{item.b}}</view>
     </view>
   </view>
 </view>

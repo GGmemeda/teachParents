@@ -19,7 +19,7 @@ Page({
     if (options.status == 4) {
       openurl = `/pages/set_level/index?id=${options.id}`
     } else if (options.status == 3) {
-      openurl = `/pages/add_students_scores/index?id=${options.id}`
+      openurl = `/pages/add_students_scores/index?id=${options.id}&tokenUserType=${options.tokenUserType}`
     }
     this.setData({
       status: options.status,

@@ -150,15 +150,20 @@
 }
 .lanm {
   display: inline-block;
-  width: 156rpx;
+  padding: 0 35rpx;
   height: 100%;
   line-height: 88rpx;
   text-align: center;
   font-size:32rpx;
   color:rgba(26,29,30,1);
 }
+.active {
+  position: relative;
+  border-bottom: 1px solid rgba(25, 164, 253, 1);
+  color: rgba(25, 164, 253, 1);
+}
 .pasdjf {
-  width: 900rpx;
+  white-space: nowrap;
 }
 .t123 {
   flex: 1;
@@ -225,7 +230,7 @@
 }
 .t2s .fl {
   float: left;
-  width: 110rpx;
+  padding: 0 14rpx;
   height: 55rpx;
   border: 1px solid rgba(26, 29, 30, 0.2);
   font-size:28rpx;
@@ -247,4 +252,14 @@
   width: 1px;
   height: 50%;
   background-color: rgba(228, 228, 228, 1);
+}
+.actives {
+  position: relative;
+  border: 1px solid rgba(25, 164, 253, 1) !important;
+  color: rgba(25, 164, 253, 1) !important;
+}
+.edit {
+  width: 28rpx;
+  vertical-align: middle;
+  margin-left: 16rpx;
 }
