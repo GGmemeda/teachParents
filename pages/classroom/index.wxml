@@ -30,7 +30,7 @@
       <view class="tc2"> 
         <view class="tct border-b">课堂管理</view>
         <view class="ktcontent">
-          <view class="lis border-r" data-name="notice" bindtap="toPage" >
+          <view class="lis border-r" data-name="class_tz" bindtap="toPage" >
             <image mode="widthFix" class="tzroom" src="/images/classroom/tz.png" ></image>
             <view class="mz">通知</view>
           </view>

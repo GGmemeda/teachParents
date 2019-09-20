@@ -1,8 +1,12 @@
 /* pages/my_info/index.wxss */
 .info_content {
   padding: 0 30rpx 135rpx 30rpx;
+  height: 100vh;
 }
-
+.info-wrapper{
+  height: 100%;
+  overflow: auto;
+}
 .info_list {
   background-color: #ffffff;
   padding: 0 32rpx;
@@ -115,4 +119,33 @@
   -webkit-box-orient: vertical;
   margin-top: 25rpx;
   margin-bottom: 28rpx;
+}
+.left-unread{
+  font-size:28rpx;
+  font-family:PingFangSC;
+  font-weight:400;
+  color:rgba(25,164,253,1) !important;
+  line-height:28rpx;
+}
+.withdrawn{
+  background:rgba(255,255,255,1)!important;
+}
+.withdrawn  .tp1 text{
+  color:rgba(51,57,71,.4) !important;
+}
+.withdrawn .tp2{
+  color:rgba(44,50,65,.4)!important;
+}
+.withdrawn .left-unread{
+  color:rgba(26,29,30,.4) !important;
+}
+
+.bottom-button{
+  position: fixed;
+  bottom: 0rpx;
+  left:0;
+  padding: 0 40px 20rpx 40rpx;
+}
+.title{
+  font-size: 36rpx;
 }

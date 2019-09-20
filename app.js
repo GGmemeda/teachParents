@@ -7,7 +7,7 @@ App({
     // baseUrl: 'https://weixin.yitiwanlian.com/',
     // baseUrl: 'https://xiaochengxu.yitiwanlian.com/',
     // baseUrl: 'http://192.168.0.107:8087/',
-    baseUrl: 'http://192.168.0.102:8089/',
+    baseUrl: 'http://192.168.0.101:8089/',
     header: {
       openid: '2n4nqmdic8j38cj4'
     },
@@ -37,7 +37,7 @@ App({
 
   uploadImg(url, fn) {
     this.HTTP({
-      url: 'wxapi/upload/uploadBase64',
+      url: 'wxtapi/upload/uploadBase64',
       method: "POST",
       data: url
     }).then(res => {

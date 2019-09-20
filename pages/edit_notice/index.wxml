@@ -6,6 +6,7 @@
                 <view class="form-title">
                     <input
                             bindinput="onTitleChange"
+                            value="{{titleVal}}"
                             placeholder-style="color:rgba(26,29,30,.4);" class="title-input" maxlength="20"
                             placeholder="请填写通知标题(20字以内)"></input>
                 </view>

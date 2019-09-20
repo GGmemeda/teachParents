@@ -1,0 +1,20 @@
+<!--pages/receiver_List/index.wxml-->
+<view style="overflow: hidden;min-height: 100vh;background: #fff">
+    <view>
+        <tab tabarr="{{tabArr}}" bind:changetab="pageTabFun"></tab>
+    </view>
+    <view class="list-wrapper">
+    <view class="data-view list" wx:for="{{unreadList}}" wx:key="{{index}}">
+        <view class="list-left">
+            <image src="{{item.headPic}}"></image>
+            <view class="left-text">
+                <view>{{item.parentName}}</view>
+                <view>{{item.name}}</view>
+            </view>
+        </view>
+        <view class="right-img" wx:if="{{navIndex===0}}">
+            <image bindtap="setPhone" src="/images/icon/phone.png" data-phone="{{item.phone}}"></image>
+        </view>
+    </view>
+    </view>
+    </view>

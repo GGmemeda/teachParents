@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/results/index",
+    "pages/receiver_List/index",
     "pages/index/index",
     "pages/class_tz/index",
+    "pages/create_notice/index",
+    "pages/results/index",
     "pages/class_det/index",
     "pages/classroom/index",
     "pages/set_level/index",
@@ -34,7 +36,6 @@
     "pages/sao_finish/index",
     "pages/sao_page/index",
     "pages/file_upload/index",
-    "pages/create_notice/index",
     "pages/choose_file/index",
     "pages/notice/index"
   ],

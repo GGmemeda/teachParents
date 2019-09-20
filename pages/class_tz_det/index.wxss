@@ -45,6 +45,9 @@
   margin-top: 30rpx;
   margin-right: 1.6%;
 }
+.cimg +.cimg{
+  margin-left: 32rpx;
+}
 
 .cimgcontent .cimg:nth-child(3n){
   margin-right: 0;
@@ -81,5 +84,68 @@
 .tx2 {
   color: rgba(72, 74, 75, .6);
   font-size: 24rpx;
-  margin-top: 8rpx;
+  margin-top: 16rpx;
+}
+.tx2 text{
+  margin-right: 32rpx;
+}
+.bottom-button{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height:100rpx;
+  background:rgba(255,255,255,1);
+  font-size:28rpx;
+  font-family:PingFangSC;
+  font-weight:400;
+  color:rgba(0,155,253,1);
+  line-height:40rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bottom-button image{
+  width:32rpx;
+  height: 26rpx;
+  margin-right: 8rpx;
+}
+.content{
+  padding-top: 32rpx;
+}
+.textarea{
+  font-size:28rpx;
+  font-family:PingFangSC;
+  font-weight:400;
+  color:rgba(26,29,30,1);
+  line-height:40rpx;
+}
+.edit-bottom{
+  display: flex;
+}
+.edit-bottom view{
+  flex: auto;
+  text-align: center;
+  font-size:28rpx;
+  font-family:PingFangSC;
+  font-weight:400;
+  color:rgba(0,155,253,1);
+  line-height:40rpx
+}
+.edit-bottom button image{
+  width:32rpx;
+  height:31rpxs;
+  margin-right: 16rpx;
+}
+.show-line{
+  position: relative;
+}
+.show-line:after{
+  content:'';
+  position: absolute;
+  right: 0;
+  width:1rpx;
+  height:60rpx;
+  top: -5rpx;
+  border-right: 1rpx solid #E4E4E4;
 }

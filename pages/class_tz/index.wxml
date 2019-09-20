@@ -1,24 +1,32 @@
 <!--pages/my_info/index.wxml-->
 <view class="info_content">
-  <view class="info_list" wx:for="{{dataList}}" wx:key="{{index}}">
-    <view class="il_center">
-      <view class="tp1">
-        <text>{{item.name}}</text>
-        <text>{{item.time}}</text>
-      </view>
-      <view class="tp2">
-        {{item.content}}
-      </view>
-      <view class="border-b border-b-s"></view>
-      <view class="tp3" bindtap="openDet" data-id="{{item.id}}">
-        <view>查看详情</view>
-        <view class="tp3cen">
-          <text class="hd"></text>
+    <view class="info-wrapper">
+        <view class="info_list {{!item.status?'withdrawn':''}}" wx:for="{{dataList}}" wx:key="{{index}}">
+            <view class="il_center ">
+                    <view class="tp1" bindtap="openDet"  data-id="{{item.id}}">
+                        <text class="title">{{item.title}}</text>
+                        <text>{{item.time}}</text>
+                    </view>
+                    <view class="tp2"  bindtap="openDet"  data-id="{{item.id}}">
+                        {{item.content}}
+                    </view>
+                </view>
+                <view class="border-b border-b-s"></view>
+                <view class="tp3" >
+                    <view class="left-unread">{{item.status?item.readState:'已撤回'}}</view>
+                    <view class="tp3cen">
+                        <!--          <text class="hd"></text>-->
+                    </view>
+                    <image bindtap="toReceiveList" data-id="{{item.id}}" wx:if="{{item.status}}" class="to" src="/images/icon/to.png" mode="widthFix"></image>
+                </view>
         </view>
-        <image class="to" src="/images/icon/to.png" mode="widthFix"></image>
-      </view>
+
+        <view class="bottom-button">
+            <view class="cz angular file-bottom-button" bindtap="toNoticePage">
+                发布通知
+            </view>
+        </view>
     </view>
-  </view>
 </view>
 
 <!-- 没有数据 -->

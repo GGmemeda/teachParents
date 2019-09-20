@@ -20,7 +20,24 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        const _this=this;
+        const eventChannel = this.getOpenerEventChannel();
+        eventChannel.on('acceptDataFromOpenerPage', function(data) {
+            const currentData=data.data;
+            _this.pageType='edit';
+            console.log(data);
+            app.CHOOSE_FILE_DATA=currentData.urlFile;
+            const imageArray=[];
+            currentData.urlPic.map(item=>{
+                imageArray.push({url:item})
+            });
+            _this.setData({
+                titleVal:currentData.title,
+                textareaVal:currentData.content,
+                adviceImgList:imageArray,
+                chooseFiles:currentData.urlFile
+            })
+        })
     },
 
     /**
@@ -182,18 +199,34 @@ Page({
                     title: "图片上传中...",
                     mask: true,
                 });
-                for (let i = 0; i < imgLen; i++) {
-                    app.uploadImg("data:image/png;base64," + this.data.adviceImgList[i].base64, function (src) {
-                        imgStr.push(src);
-                        loading++;
-                        if (loading >= imgLen) {
-                            wx.hideLoading();
-                            data.urlPic=imgStr.join(';');
-                            console.log(data);
-                            _this.noticeApi(data)
-                        }
-                    });
+                const upImages=[];
+                this.data.adviceImgList.map(item=>{
+                    if(item.base64){
+                        upImages.push(item)
+                    }else{
+                        imgStr.push(item.url);
+                    }
+                });
+                if(upImages.length>0){
+                    for (let i = 0; i < upImages; i++) {
+                        app.uploadImg("data:image/png;base64," + this.data.adviceImgList[i].base64, function (src) {
+                            imgStr.push(src);
+                            loading++;
+                            if (loading >= upImages.length) {
+                                wx.hideLoading();
+                                data.urlPic=imgStr.join(';');
+                                console.log(data);
+                                _this.noticeApi(data)
+                            }
+                        });
+                    }
+                }else{
+                    wx.hideLoading();
+                    data.urlPic=imgStr.join(';');
+                    console.log(data);
+                    _this.noticeApi(data)
                 }
+
             }else{
                 this.noticeApi(data);
             }
@@ -209,19 +242,19 @@ Page({
     noticeApi(data) {
         console.log(data);
         app.HTTP({
-            url: 'wxtapi/msg/addNotice',
+            url: 'wxtapi/msg/editNotice',
             method: 'Post',
             data: data
         }).then(res => {
             console.log(res);
             wx.showToast({
-                title: '通知创建成功',
+                title: '通知编辑成功',
                 icon: "success",
                 duration: 1000
             })
             setTimeout(()=>{
-                wx.navigateBack({
-                    delta:1
+                wx.redirectTo({
+                   url:'/pages/class_tz/index'
                 })
             },1500)
         });
