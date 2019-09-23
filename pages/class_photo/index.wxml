@@ -1,12 +1,19 @@
+<view>
 <view class="content">
   <view class="ul">
     <view class="li" wx:for="{{dataList}}" wx:key="{{index}}">
       <view class="l">
-        <image class="av" mode="aspectFill" src="/images/icon/default.jpg"></image>
+        <image class="av" mode="aspectFill" src="{{item.headPic||'/images/icon/default.jpg'}}"></image>
+        <view>
+          <view class="name">{{item.title}}</view>
+          <view class="fabu">
+            {{item.time}}
+          </view>
+        </view>
+
       </view>
       <view class="r">
         <view class="rctent">
-          <view class="name">{{item.tltie}}</view>
           <view class="clb">{{item.des}}</view>
           <view class="imglist">
             <view class="il" wx:for="{{item.urlList}}" 
@@ -20,13 +27,12 @@
               <video class="ils" wx:if="{{!cItem.isImg}}" src="{{cItem.url}}"></video>
             </view>
           </view>
-          <view class="fabu">
-            刚刚
-          </view>
+
         </view>
       </view>
     </view>
   </view>
 </view>
 
-<view class="uploadImg" bindtap="open">上传</view>
+<view class="uploadImg" bindtap="open"><image src="/images/icon/camera.png"></image></view>
+</view>
