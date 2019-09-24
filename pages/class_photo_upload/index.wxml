@@ -23,5 +23,5 @@
 </view>
 
 <view class="fixed">
-  <view bindtap="upl" class="{{isUpload ? 'cz' : 'dis'}}">上传</view>
+  <view bindtap="upl" class="{{val ? 'cz' : 'dis'}}">上传</view>
 </view>

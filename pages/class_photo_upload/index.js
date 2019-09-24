@@ -98,7 +98,7 @@ Page({
     let loading = 0;
     let upArr = [];
     let _this = this;
-    if (this.data.isUpload) {
+    if (this.data.isUpload&&imgLen>0) {
       wx.showLoading({
         title: '上传中...',
         mask: true,
@@ -113,18 +113,23 @@ Page({
           }
         })
       })
+    }else{
+      _this.upiiii()
     }
   },
 
   upiiii(url) {
+    const data={
+      des: this.data.val,
+    }
+    if(url){
+      data.url=url;
+    }
     app.HTTP({
-      url: 'wxapi/photo/addPhoto',
+      url: 'wxtapi/photo/addPhoto',
+      method:'POST',
       title: '上传中...',
-      data: {
-        des: this.data.val,
-        userId: 1,
-        url
-      }
+      data
     }).then(res => {
       if (res.status == 200) {
         wx.showToast({

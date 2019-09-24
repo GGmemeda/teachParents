@@ -106,7 +106,7 @@ Page({
     /**
      * 删除
      */
-    deleteNotice(){
+    deleteNotice() {
         let _this = this;
         wx.showModal({
             title: '删除提示',
@@ -132,13 +132,49 @@ Page({
             }
         });
     },
-    editNotice(){
-        const pushData=this.data.dataList;
+    editNotice() {
+        const pushData = this.data.dataList;
         wx.navigateTo({
-            url:'/pages/edit_notice/index',
+            url: '/pages/edit_notice/index',
             success(res) {
-                res.eventChannel.emit('acceptDataFromOpenerPage', { data: pushData })
+                res.eventChannel.emit('acceptDataFromOpenerPage', {data: pushData});
             }
-        })
-    }
+        });
+    },
+    fileInfo: function (e) {
+
+        var that = this;
+        that.setData({
+
+            loadingHidden: false
+
+        });
+        var url = e.currentTarget.dataset.url;
+
+        wx.downloadFile({
+            url: url,
+            success: function (res) {
+                var filePath = res.tempFilePath;
+                wx.openDocument({
+                    filePath: filePath,
+                    success: function (res) {
+                        //页面显示加载动画
+
+                        that.setData({
+
+                            loadingHidden: true
+
+                        });
+
+                        console.log('打开文档成功');
+
+                    }
+
+                });
+
+            },
+
+        });
+
+    },
 });

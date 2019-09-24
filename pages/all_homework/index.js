@@ -55,7 +55,7 @@ Page({
 
   getDT() {
     app.HTTP({
-      url: 'wxapi/work/getWorkActionList',
+      url: 'wxtapi/work/getWorkActionList',
       method: 'GET'
     }).then(res => {
       this.setData({

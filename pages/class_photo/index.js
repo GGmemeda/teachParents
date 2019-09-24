@@ -12,11 +12,11 @@ Page({
 
   getReadyData() {
     app.HTTP({
-      url: `wxapi/photo/getPhotoList`,
+      url: `wxtapi/photo/getPhotoList`,
       method: 'GET'
     }).then(res => {
       res.result.forEach((item, index) => {
-        let urlList = item.url.split(";");
+        let urlList = item.url&&item.url.split(";")||[];
         let arr = [];
         urlList.forEach((cItem, cIndex) => {
           arr.push({

@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/students_list/index",
+    "pages/homework_list/index",
     "pages/index/index",
+    "pages/all_homework/index",
+    "pages/class_photo/index",
     "pages/receiver_List/index",
     "pages/class_tz/index",
     "pages/create_notice/index",
@@ -19,7 +21,6 @@
     "pages/homework_type_video/index",
     "pages/homework_type_images/index",
     "pages/homework_type_text/index",
-    "pages/all_homework/index",
     "pages/webview/index",
     "pages/login_xieyi/index",
     "pages/my_info/index",
@@ -62,7 +63,7 @@
         "text": "首页"
       },
       {
-        "iconPath": "images/icon/tabbar/index.png",
+        "iconPath": "images/icon/tabbar/classRoom_unactive.png",
         "selectedIconPath": "images/icon/tabbar/classroom.png",
         "pagePath": "pages/classroom/index",
         "text": "课堂"

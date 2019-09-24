@@ -18,7 +18,7 @@
 <view class="file">
   <view class="li border-b" wx:for="{{dataList.urlFile}}">
     <image class="lr" src="{{imageFileArray[item.suffix]}}"></image>
-    <view class="rl">
+    <view class="rl" bindtap="fileInfo" data-url="{{item.path}}">
       <view class="tx1">{{item.name}}</view>
       <view class="tx2"> <text>{{item.size}}</text>  {{item.teacherName}}  {{item.updateTime}}</view>
     </view>
