@@ -1,39 +1,35 @@
-<!--<view class="t1">-->
-<!--  <view class="l">-->
-<!--    <image src="{{dataList.pic}}" mode="widthFix"></image>-->
-<!--  </view>-->
-<!--  <view class="r">-->
-<!--    <view class="n">{{dataList.name}}</view>-->
-<!--    <view class="t">{{dataList.time}}</view>-->
-<!--  </view>-->
-<!--</view>-->
-
-<view class="content">
-  <view class="textarea">{{dataList.content}}</view>
-  <view class="cimgcontent">
-    <image wx:for="{{dataList.urlPic}}" wx:key="{{index}}" class="cimg" src="{{item}}" mode="widthFix"></image>
-  </view>
-</view>
-
-<view class="file">
-  <view class="li border-b" wx:for="{{dataList.urlFile}}">
-    <image class="lr" src="{{imageFileArray[item.suffix]}}"></image>
-    <view class="rl" bindtap="fileInfo" data-url="{{item.path}}">
-      <view class="tx1">{{item.name}}</view>
-      <view class="tx2"> <text>{{item.size}}</text>  {{item.teacherName}}  {{item.updateTime}}</view>
+<view class="view-part">
+    <view class="content">
+        <view class="textarea">{{dataList.content}}</view>
+        <view class="cimgcontent">
+            <image wx:for="{{dataList.urlPic}}" wx:key="{{index}}" class="cimg" src="{{item}}" mode="widthFix"></image>
+        </view>
     </view>
-  </view>
-</view>
-<view class="bottom-button" bindtap="onRecall" wx:if="{{dataList.status}}">
-  <image src="/images/create_notice/recall.png"></image>  撤回
-</view>
-<view class="bottom-button edit-bottom"  wx:if="{{!dataList.status}}">
-  <view class="show-line" bindtap="editNotice">
-      <image src="/images/create_notice/edit.png"></image>
-      编辑
-  </view>
-    <view bindtap="deleteNotice">
-        <image src="/images/create_notice/de.png"></image>
-        删除
+
+    <view class="file">
+        <view class="li border-b" wx:for="{{dataList.urlFile}}" wx:key="{{key}}">
+            <image class="lr" src="{{imageFileArray[item.suffix]}}"></image>
+            <view class="rl" bindtap="fileInfo" data-url="{{item.path}}">
+                <view class="tx1">{{item.name}}</view>
+                <view class="tx2">
+                    <text>{{item.size}}</text>
+                    {{item.teacherName}} {{item.updateTime}}
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="bottom-button" bindtap="onRecall" wx:if="{{dataList.status}}">
+        <image src="/images/create_notice/recall.png"></image>
+        撤回
+    </view>
+    <view class="bottom-button edit-bottom" wx:if="{{!dataList.status}}">
+        <view class="show-line" bindtap="editNotice">
+            <image src="/images/create_notice/edit.png"></image>
+            编辑
+        </view>
+        <view bindtap="deleteNotice">
+            <image src="/images/create_notice/de.png"></image>
+            删除
+        </view>
     </view>
 </view>

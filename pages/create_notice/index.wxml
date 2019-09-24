@@ -1,7 +1,5 @@
 <!--pages/create_notice/index.wxml-->
-<view style="height: 100vh;background: #fff">
-    <view class="main-content">
-        <view class="top-send">
+<view style="min-height: 100vh;background: #fff">
             <view class="form-content">
                 <view class="form-title">
                     <input
@@ -58,7 +56,6 @@
                     </view>
                 </view>
             </view>
-        </view>
         <view class="bottom-send">
             <view class="left-choose">
                 <image src="/images/create_notice/pic.png" bindtap="onChoosePic"></image>
@@ -68,6 +65,4 @@
                 发布
             </view>
         </view>
-    </view>
-
 </view>

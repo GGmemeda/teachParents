@@ -80,5 +80,64 @@ Page({
                 homeworkList
             });
         });
+    },
+    /**
+     * 撤回
+     */
+    onRecall(e){
+        const workId=e.currentTarget.dataset.id;
+        const _this=this;
+        wx.showModal({
+            title: '提示',
+            content: '是否撤回当前作业.',
+            showCancel: true,
+            success: function (res) {
+                app.HTTP({
+                    url: 'wxtapi/homeWork/recallWorkById',
+                    isLoading: true,
+                    method: "GET",
+                    data:{
+                        workId
+                    }
+                }).then(res => {
+                    wx.showToast({
+                        icon:'success',
+                        title:'撤回成功'
+                    });
+                    _this.getAllHomeworkList();
+                });
+            }})
+    },
+    /**
+     * 删除作业
+     */
+    onDelete(e){
+        const workId=e.currentTarget.dataset.id;
+        const _this=this;
+        wx.showModal({
+            title: '提示',
+            content: '是否删除当前作业.',
+            showCancel: true,
+            success: function (res) {
+                app.HTTP({
+                    url: 'wxtapi/homeWork/delWorkById',
+                    isLoading: true,
+                    method: "GET",
+                    data:{
+                        workId
+                    }
+                }).then(res => {
+                    wx.showToast({
+                        icon:'success',
+                        title:'删除成功'
+                    });
+                    _this.getAllHomeworkList();
+                });
+            }})
+    },
+    toHomeworkDetail(e){
+        wx.navigateTo({
+            url: `/pages/homeword_receiver_List/index?id=${e.currentTarget.dataset.id}`,
+        });
     }
 });

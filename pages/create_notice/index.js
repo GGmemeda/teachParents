@@ -51,7 +51,7 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
-
+        app.CHOOSE_FILE_DATA = [];
     },
 
     /**
@@ -156,12 +156,12 @@ Page({
      * 发布通知
      */
     createNotice() {
-        if (!this.data.titleVal||!this.data.textareaVal) {
+        if (!this.data.titleVal || !this.data.textareaVal) {
             return;
         }
         const urlFile = [];
         let imgLen = this.data.adviceImgList.length;
-        const _this=this;
+        const _this = this;
         let loading = 0;
         let imgStr = [];
         const data = {
@@ -174,10 +174,10 @@ Page({
             });
             data.urlFile = urlFile.join(';');
         }
-        if (this.data.titleVal&&this.data.textareaVal) {
+        if (this.data.titleVal && this.data.textareaVal) {
             console.log('title和content都有了');
-            console.log(imgLen>0);
-            if(imgLen>0){
+            console.log(imgLen > 0);
+            if (imgLen > 0) {
                 wx.showLoading({
                     title: "图片上传中...",
                     mask: true,
@@ -188,13 +188,13 @@ Page({
                         loading++;
                         if (loading >= imgLen) {
                             wx.hideLoading();
-                            data.urlPic=imgStr.join(';');
+                            data.urlPic = imgStr.join(';');
                             console.log(data);
-                            _this.noticeApi(data)
+                            _this.noticeApi(data);
                         }
                     });
                 }
-            }else{
+            } else {
                 this.noticeApi(data);
             }
 
@@ -211,19 +211,20 @@ Page({
         app.HTTP({
             url: 'wxtapi/msg/addNotice',
             method: 'Post',
-            data: data
+            data: data,
+            title: '发布中..'
         }).then(res => {
             console.log(res);
             wx.showToast({
                 title: '通知创建成功',
                 icon: "success",
                 duration: 1000
-            })
-            setTimeout(()=>{
+            });
+            setTimeout(() => {
                 wx.navigateBack({
-                    delta:1
-                })
-            },1500)
+                    delta: 1
+                });
+            }, 1500);
         });
     }
 });
