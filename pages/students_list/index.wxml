@@ -1,2 +1,30 @@
-<!--pages/students_list/index.wxml-->
-<text>pages/students_list/index.wxml</text>
+<view class="ul" wx:if="{{studentList.length}}">
+  <view class="li {{index != (studentList.length - 1) ? 'border-b' : ''}}" 
+        wx:for="{{studentList}}" 
+        wx:key="{{index}}">
+    <image class="a" src="{{item.headPic}}"></image>
+    <text class="b">{{item.name}}</text>
+    <text class="c">{{item.count}}位家长</text>
+  </view>
+  <!-- <view class="li border-b">
+    <image class="a" src="/images/icon/default.jpg"></image>
+    <text class="b">姜磊</text>
+    <text class="c">3位家长</text>
+  </view>
+  <view class="li border-b">
+    <image class="a" src="/images/icon/default.jpg"></image>
+    <text class="b">姜磊</text>
+    <text class="c">3位家长</text>
+  </view>
+  <view class="li border-b">
+    <image class="a" src="/images/icon/default.jpg"></image>
+    <text class="b">姜磊</text>
+    <text class="c">3位家长</text>
+  </view>
+  <view class="li border-b">
+    <image class="a" src="/images/icon/default.jpg"></image>
+    <text class="b">姜磊</text>
+    <text class="c">3位家长</text>
+  </view> -->
+</view>
+<no-data wx:if="{{!studentList.length}}" morentext="暂无学生数据"></no-data>

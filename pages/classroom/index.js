@@ -13,7 +13,9 @@ Page({
   },
   
   students() {
-    
+    wx.navigateTo({
+      url: '/pages/students_list/index'
+    })
   },
 
   toPage(e) {

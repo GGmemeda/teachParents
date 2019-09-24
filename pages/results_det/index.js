@@ -53,7 +53,40 @@ Page({
   },
 
   del() {
+    let _this = this;
+    wx.showModal({
+      title: '提示',
+      content: '将清空此考试所有分数，是否继续！',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          _this.clearFs();
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
 
+  clearFs() {
+    app.HTTP({
+      url: 'wxtapi/transcript',
+      method: 'DELETE',
+      title: '删除中...',
+      data: {
+        id: this.id,
+        tokenUserType: JSON.parse(this.tokenUserType)
+      }
+    }).then(res => {
+      wx.showToast({
+        title: '删除成功',
+      })
+      setTimeout(() => {
+        wx.navigateBack({
+          delta: 1,
+        })
+      }, 1500)
+    })
   },
 
   /**

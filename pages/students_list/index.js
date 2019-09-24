@@ -1,18 +1,30 @@
 // pages/students_list/index.js
+let app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    studentList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getReadyData();
+  },
 
+  getReadyData() {
+    app.HTTP({
+      url: 'wxtapi/list/student',
+      method: 'GET'
+    }).then(res => {
+      this.setData({
+        studentList: res.result
+      })
+    })
   },
 
   /**

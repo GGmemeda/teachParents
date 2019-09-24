@@ -30,7 +30,7 @@
         <image class="av" mode="widthFix" src="{{item.headPic}}"></image>
         <view class="ns">
           <view class="nsname">{{item.name}}</view>
-          <view class="nssfz">身份证号：{{item.idCards}}</view>
+          <view class="nssfz">身份证号：{{item.idcard}}</view>
         </view>
         <input class="inp" 
                 bindblur="uploadFs"

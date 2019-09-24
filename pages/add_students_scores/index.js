@@ -107,6 +107,9 @@ Page({
           b: res.result.groupCount[i]
         })
       }
+      res.result.ObjList.forEach(item => {
+        item.idcard = item.idCards.replace(/^(.{4})(?:\d+)(.{4})$/, "$1****$2");
+      })
       this.setData({
         kemuArr: aarr,
         luruArr: res.result.ObjList

@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/homework_list/index",
     "pages/index/index",
+    "pages/students_list/index",
+    "pages/homework_list/index",
     "pages/all_homework/index",
     "pages/class_photo/index",
     "pages/receiver_List/index",
