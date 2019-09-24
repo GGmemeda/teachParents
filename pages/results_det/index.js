@@ -1,4 +1,5 @@
 // pages/results_det/index.js
+let app = getApp();
 Page({
 
   /**
@@ -9,22 +10,99 @@ Page({
     thisselectIndex: 0,
     openurl: '',
     status: null, //设置状态 4 未设置规则   3 未录入状态  2录入状态  1 撤回状态  0 发布状态
+    averageObj: {},
+    groupCount: [],
+    groupList: [],
+    selectIndex: 0,
+    cArr: []
+  },
+
+  back() {
+    app.HTTP({
+      url: 'wxtapi/transcript/withdraw',
+      method: 'GET',
+      data: {
+        id: this.id,
+        tokenUserType: this.tokenUserType,
+        status: 1, //  发布0，撤回1
+      }
+    }).then(res => {
+      wx.showToast({
+        title: '撤回成功！'
+      })
+      setTimeout(() => {
+        wx.navigateBack({
+          delta: 1,
+        })
+      }, 1500)
+    })
+  },
+
+  changeNav(e) {
+    let ae = e.currentTarget.dataset
+    this.setData({
+      selectIndex: ae.index,
+      groupList: this.data.cArr[ae.name]
+    })
+  },
+
+  edi() {
+    wx.navigateTo({
+      url: this.data.openurl
+    })
+  },
+
+  del() {
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.id = options.id;
+    this.tokenUserType = options.tokenUserType;
     let openurl = ''
     if (options.status == 4) {
       openurl = `/pages/set_level/index?id=${options.id}`
-    } else if (options.status == 3) {
+    } else if (options.status == 3 || options.status == 1) {
       openurl = `/pages/add_students_scores/index?id=${options.id}&tokenUserType=${options.tokenUserType}`
     }
     this.setData({
       status: options.status,
       openurl
     })
+    this.getView();
+  },
+
+  getView() {
+    if (this.data.status == 1 || this.data.status == 0) {
+      app.HTTP({
+        url: 'wxtapi/transcript/view',
+        method: 'GET',
+        data: {
+          id: this.id,
+          tokenUserType: this.tokenUserType
+        }
+      }).then(res => {
+        let arr = []
+        for (let item in res.result.groupCount) {
+          arr.push({
+            a: item,
+            b: res.result.groupCount[item]
+          })
+        }
+        this.setData({
+          averageObj: res.result.averageObj,
+          groupCount: arr,
+          groupList: res.result.groupList['全部'],
+          cArr: res.result.groupList
+        })
+        wx.setNavigationBarTitle({
+          title: res.result.name
+        });
+      })
+    }
   },
 
   showWin() {

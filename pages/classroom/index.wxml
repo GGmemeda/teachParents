@@ -22,7 +22,7 @@
             {{classGradeArray[selectIndex]['schoolName']}}
           </view>
         </view>
-        <view class="t2con">
+        <view class="t2con" bindtap="students">
           <view class="l a"><image mode="widthFix" src="/images/classroom/cls.png"></image>课堂学生</view>
           <view class="r a">{{classGradeArray[selectIndex]['count']}}人<image mode="widthFix" src="/images/icon/to.png"></image></view>
         </view>

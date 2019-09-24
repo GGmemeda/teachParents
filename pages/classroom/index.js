@@ -11,6 +11,10 @@ Page({
     classGradeArray: [],
     selectIndex: 0
   },
+  
+  students() {
+    
+  },
 
   toPage(e) {
     wx.navigateTo({

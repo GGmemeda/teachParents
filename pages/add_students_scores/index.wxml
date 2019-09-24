@@ -53,7 +53,7 @@
   <view class="dengji" catchtap>
     <view class="t1s">
       <view>
-        全部等级<image bindtap="openEdit" class="edit" mode="widthFix" src="/images/classroom/edit.png"></image>
+        全部等级<image wx:if="{{!tokenUserType}}" bindtap="openEdit" class="edit" mode="widthFix" src="/images/classroom/edit.png"></image>
       </view>
       <image class="xuanzhuan" mode="widthFix" src="/images/classroom/gd.png"></image>
     </view>
@@ -63,7 +63,7 @@
             data-index="{{index}}"
             data-name="{{item.a}}"
             bindtap="selectLanmu"
-            wx:key="{{index}}">{{item.a}}{{item.b}}</view>
+            wx:key="{{index}}">{{item.a}}</view>
     </view>
   </view>
 </view>

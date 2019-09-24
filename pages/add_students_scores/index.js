@@ -10,7 +10,29 @@ Page({
     isShow: false,
     kemuArr: [],
     luruArr: [],
+    tokenUserType: null,
     slectIndex: 0
+  },
+
+  submit() {
+    app.HTTP({
+      url: 'wxtapi/transcript/withdraw',
+      method: 'GET',
+      data: {
+        id: this.id,
+        tokenUserType: this.tokenUserType,
+        status: 0, //  发布0，撤回1
+      }
+    }).then(res => {
+      wx.showToast({
+        title: '发布成功'
+      })
+      setTimeout(() => {
+        wx.navigateBack({
+          delta: this.backIndex ? this.backIndex : 2
+        })
+      }, 1500)
+    })
   },
 
   openEdit() {
@@ -97,11 +119,11 @@ Page({
    */
   onLoad: function (options) {
     this.id = options.id;
-    this.isto = options.isto;
     this.tokenUserType = JSON.parse(options.tokenUserType);
-    console.info(options)
+    this.backIndex = options.backIndex
     this.setData({
-      name: decodeURI(wx.getStorageSync("Subjects"))
+      name: decodeURI(wx.getStorageSync("Subjects")),
+      tokenUserType: this.tokenUserType
     })
   },
 

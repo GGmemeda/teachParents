@@ -76,15 +76,22 @@
   font-size:32rpx;
   color:rgba(26,29,30,1);
 }
+.lanmactive {
+  border-bottom: 1px solid rgba(25, 164, 253, 1);
+  color: rgba(25, 164, 253, 1);
+}
 .pasdjf {
-  width: 900rpx;
+  white-space: nowrap;
+  height: 100%;
 }
 .t123 {
   flex: 1;
   width: 0;
+  height: 100%;
 }
 .t123 scroll-view {
   width: 100%;
+  height: 100%;
 }
 .scroll-view{
   background-color: #fff;
@@ -166,4 +173,8 @@
   width: 1px;
   height: 50%;
   background-color: rgba(228, 228, 228, 1);
+}
+.lanmactives {
+  border: 1px solid rgba(25, 164, 253, 1) !important;
+  color: rgba(25, 164, 253, 1) !important;
 }

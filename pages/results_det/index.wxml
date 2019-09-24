@@ -2,18 +2,18 @@
 <!-- 设置状态 4 未设置规则   3 未录入状态  2录入状态  1 撤回状态  0 发布状态 -->
 <view class="fotercontent" wx:if="{{status == 1 || status == 0}}">
   <view class="jsj">
-    <view class="roomname">语文</view>
+    <view class="roomname">{{averageObj.subjectsName}}</view>
     <view class="room_clonm">
       <view class="rc1">
-        <view>99</view>
+        <view>{{averageObj.max}}</view>
         <view>最高分</view>
       </view>
       <view class="rc1">
-        <view>99</view>
+        <view>{{averageObj.average}}</view>
         <view>平均分</view>
       </view>
       <view class="rc1">
-        <view>99</view>
+        <view>{{averageObj.min}}</view>
         <view>最低分</view>
       </view>
     </view>
@@ -22,11 +22,12 @@
     <view class="t123">
       <scroll-view scroll-x bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
         <view class="pasdjf">
-          <view class="lanm">A(30)</view>
-          <view class="lanm">A(30)</view>
-          <view class="lanm">A(30)</view>
-          <view class="lanm">A(30)</view>
-          <view class="lanm">A(30)</view>
+          <view class="lanm {{index == selectIndex ? 'lanmactive' : ''}}" 
+                wx:for="{{groupCount}}" 
+                bindtap="changeNav"
+                data-name="{{item.a}}"
+                data-index="{{index}}"
+                wx:key="{{index}}">{{item.a}}({{item.b}})</view>
         </view>
       </scroll-view>
     </view>
@@ -38,34 +39,36 @@
     <view class="clun3c">
       <scroll-view scroll-y style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
         <view class="scroll-view">
-          <view class="scroll-view-item border-b">
-            <text>覃一</text>
-            <text>90</text>
+          <view class="scroll-view-item border-b" 
+                wx:for="{{groupList}}"
+                wx:key="{{index}}">
+            <text>{{item.name}}</text>
+            <text class="{{item.result ? '' : 'nolr'}}">{{item.result ? item.result : '未录入'}}</text>
           </view>
-          <view class="scroll-view-item border-b">
+          <!-- <view class="scroll-view-item border-b">
             <text>覃一</text>
             <text>90</text>
           </view>
           <view class="scroll-view-item border-b">
             <text>覃一</text>
             <text class="nolr">未录入</text>
-          </view>
+          </view> -->
         </view>
       </scroll-view>
     </view>
   </view>
-  <view class="clun4">
+  <view class="clun4" bindtap="back" wx:if="{{status == 0}}">
     <image mode="widthFix" class="isjd" src="/images/classroom/cehui.png"></image>撤回
   </view>
-  <!-- <view class="clun4">
-    <view class="sjdjdjjd">
-      <image mode="widthFix" class="isjd" src="/images/classroom/edi.png"></image>编辑
+  <view class="clun4" wx:if="{{status == 1}}">
+    <view class="sjdjdjjd" bindtap="edi">
+      <image mode="widthFix"class="isjd" src="/images/classroom/edi.png"></image>编辑
     </view>
     <view class="sdfsdf"></view>
-    <view class="sjdjdjjd">
+    <view class="sjdjdjjd" bindtap="del">
       <image mode="widthFix" class="isjd" src="/images/classroom/del.png"></image>删除
     </view>
-  </view> -->
+  </view>
 </view>
 <!-- 设置规则 -->
 <no-data wx:if="{{status == 4}}" isopenurl="{{openurl}}" urltext="设置等级" morentext="你还没有设置等级，快去设置吧~"></no-data>
@@ -81,13 +84,12 @@
       <image class="xuanzhuan" mode="widthFix" src="/images/classroom/gd.png"></image>
     </view>
     <view class="t2">
-      <view class="fl">全部</view>
-      <view class="fl">A(20)</view>
-      <view class="fl">A(20)</view>
-      <view class="fl">A(20)</view>
-      <view class="fl">A(20)</view>
-      <view class="fl">A(20)</view>
-      <view class="fl">A(20)</view>
+      <view class="fl {{index == selectIndex ? 'lanmactives' : ''}}"
+            wx:for="{{groupCount}}" 
+            bindtap="changeNav"
+            data-name="{{item.a}}"
+            data-index="{{index}}"
+            wx:key="{{index}}">{{item.a}}</view>
     </view>
   </view>
 </view>

@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/receiver_List/index",
+    "pages/students_list/index",
     "pages/index/index",
+    "pages/receiver_List/index",
     "pages/class_tz/index",
     "pages/create_notice/index",
     "pages/results/index",

@@ -5,9 +5,7 @@
     <image class="logo" mode="widthFix" src="/images/icon/logo.png"></image>
     <view class="logotext">亿健通</view>
   </view>
-
   <view class="xieyi">为了保障你的权益和账号安全，需要绑定你的手机号码</view>
-
   <view class="czz angular">
     <image mode="widthFix" src="/images/icon/weix.png"></image>绑定手机号<button open-type="getPhoneNumber" bindgetphonenumber="bindgetphonenumber">绑定手机号</button>
   </view>

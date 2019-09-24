@@ -29,7 +29,7 @@ Page({
     let a = e.currentTarget.dataset;
     if (a.status == 2) { // 录入状态,直接跳转录入页面
       wx.navigateTo({
-        url: `/pages/add_students_scores/index?id=${a.id}&tokenUserType=${tokenUserType}`
+        url: `/pages/add_students_scores/index?id=${a.id}&tokenUserType=${tokenUserType}&backIndex=${1}`
       })
     } else {
       wx.navigateTo({
