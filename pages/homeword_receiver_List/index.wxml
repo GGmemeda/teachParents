@@ -1,0 +1,37 @@
+<!--pages/receiver_List/index.wxml-->
+<view style="overflow: hidden;min-height: 100vh;background: #fff">
+    <view>
+        <tab tabarr="{{tabArr}}" bind:changetab="pageTabFun"></tab>
+    </view>
+    <view class="list-wrapper">
+        <view wx:if="{{navIndex==1}}" class="data-view list" wx:for="{{unreadList}}" wx:key="{{index}}">
+            <view class="list-left">
+                <image src="{{item.headPic}}"></image>
+                <view class="left-text">
+                    <view>{{item.name}}</view>
+                </view>
+            </view>
+            <view class="right-img" wx:if="{{navIndex===0}}">
+                <image bindtap="setPhone" src="/images/icon/phone.png" data-phone="{{item.phone}}"></image>
+            </view>
+        </view>
+        <view class="finish-part" wx:if="{{navIndex==0}}" wx:for="{{unreadList}}" wx:key="{{index}}">
+            <view class="top-part">
+                <view class="image-part">
+                    <image src="{{item.headPic}}"></image>
+                </view>
+                <view class="name-part">
+                    <view class="name">{{item.name}}</view>
+                    <view class="time-part">{{item.time}}</view>
+                </view>
+            </view>
+            <view class="content-part">
+                <text>{{item.explain}}</text>
+            </view>
+            <view class="images-part">
+                <image src="{{item}}" wx:for="{{item.urlList}}" wx:key="{{key}}"></image>
+            </view>
+        </view>
+        <no-data wx:if="{{unreadList.length<1}}" morentext="暂无数据！"></no-data>
+    </view>
+</view>

@@ -13,7 +13,8 @@ Page({
         imageFiles: [],
         imageFileArray: commonConfig.imageFileArray,
         chooseFiles: [],
-        adviceImgList: []
+        adviceImgList: [],
+        noticeId:''
     },
 
     /**
@@ -25,7 +26,6 @@ Page({
         eventChannel.on('acceptDataFromOpenerPage', function(data) {
             const currentData=data.data;
             _this.pageType='edit';
-            console.log(data);
             app.CHOOSE_FILE_DATA=currentData.urlFile;
             const imageArray=[];
             currentData.urlPic.map(item=>{
@@ -34,6 +34,7 @@ Page({
             _this.setData({
                 titleVal:currentData.title,
                 textareaVal:currentData.content,
+                noticeId:currentData.id,
                 adviceImgList:imageArray,
                 chooseFiles:currentData.urlFile
             })
@@ -68,7 +69,7 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
-
+        app.CHOOSE_FILE_DATA=[];
     },
 
     /**
@@ -183,7 +184,8 @@ Page({
         let imgStr = [];
         const data = {
             title: this.data.titleVal,
-            content: this.data.textareaVal
+            content: this.data.textareaVal,
+            id:this.data.noticeId
         };
         if (this.data.chooseFiles.length > 0) {
             this.data.chooseFiles.map(item => {
@@ -191,31 +193,28 @@ Page({
             });
             data.urlFile = urlFile.join(';');
         }
+        const upImages=[];
+        this.data.adviceImgList.map(item=>{
+            if(item.base64){
+                upImages.push(item)
+            }else{
+                imgStr.push(item.url);
+            }
+        });
         if (this.data.titleVal&&this.data.textareaVal) {
-            console.log('title和content都有了');
-            console.log(imgLen>0);
             if(imgLen>0){
                 wx.showLoading({
                     title: "图片上传中...",
                     mask: true,
                 });
-                const upImages=[];
-                this.data.adviceImgList.map(item=>{
-                    if(item.base64){
-                        upImages.push(item)
-                    }else{
-                        imgStr.push(item.url);
-                    }
-                });
                 if(upImages.length>0){
-                    for (let i = 0; i < upImages; i++) {
-                        app.uploadImg("data:image/png;base64," + this.data.adviceImgList[i].base64, function (src) {
+                    for (let i = 0; i < upImages.length; i++) {
+                        app.uploadImg("data:image/png;base64," + upImages[i].base64, function (src) {
                             imgStr.push(src);
                             loading++;
                             if (loading >= upImages.length) {
                                 wx.hideLoading();
                                 data.urlPic=imgStr.join(';');
-                                console.log(data);
                                 _this.noticeApi(data)
                             }
                         });
@@ -223,7 +222,6 @@ Page({
                 }else{
                     wx.hideLoading();
                     data.urlPic=imgStr.join(';');
-                    console.log(data);
                     _this.noticeApi(data)
                 }
 
@@ -240,21 +238,20 @@ Page({
 
     },
     noticeApi(data) {
-        console.log(data);
         app.HTTP({
             url: 'wxtapi/msg/editNotice',
             method: 'Post',
-            data: data
+            data: data,
+            title:'发布中..'
         }).then(res => {
-            console.log(res);
             wx.showToast({
                 title: '通知编辑成功',
                 icon: "success",
                 duration: 1000
             })
             setTimeout(()=>{
-                wx.redirectTo({
-                   url:'/pages/class_tz/index'
+                wx.navigateBack({
+                   delta:2
                 })
             },1500)
         });

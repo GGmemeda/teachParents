@@ -1,6 +1,7 @@
 <!--pages/homework_list/index.wxml-->
 <view class="wrapper-page">
     <view class="all-list">
+        <no-data wx:if="{{homeworkList.length<1}}" morentext="暂无数据！"></no-data>
         <view class="list" wx:for="{{homeworkList}}" wx:key="{{key}}">
             <view class="list-time">{{item.time}}</view>
             <view class="list-title">{{item.title}}</view>
@@ -8,23 +9,23 @@
                 <text class="list-content" >{{item.content}}</text>
             </view>
             <view class="list-image">
-                <image wx:for="{{item.urlPic}}" src="{{item}}"></image>
+                <image wx:key="{{key}}" wx:for="{{item.urlPic}}" src="{{item}}"></image>
             </view>
             <view class="list-bottom">
-                <view class="left-part">
+                <view class="left-part" bindtap="toHomeworkDetail" data-id="{{item.workId}}">
                     {{item.finish}} <image src="/images/homework/right-arrow.png"></image>
                 </view>
                 <view class="right-part">
-                    <view wx:if="{{!item.status}}">
-                        <view class="operate-button">
+                    <view wx:if="{{item.status}}">
+                        <view class="operate-button" bindtap="onRecall" data-id="{{item.workId}}">
                             <image src="/images/homework/recall.png"></image>
                         </view>
                     </view>
-                    <view wx:if="{{item.status}}">
-                        <view class="operate-button">
+                    <view wx:if="{{!item.status}}">
+                        <view class="operate-button" >
                             <image src="/images/homework/edit.png"></image>
                         </view>
-                        <view class="operate-button">
+                        <view class="operate-button" bindtap="onDelete" data-id="{{item.workId}}">
                             <image src="/images/homework/delete.png"></image>
                         </view>
                     </view>
@@ -32,6 +33,6 @@
             </view>
         </view>
     </view>
-    <view class="bottom-button cz angular {{!val?'send-button-unacitve':''}}" bindtap="submitBack">
+    <view class="bottom-button cz angular" bindtap="submitBack">
         <text>布置作业</text></view>
 </view>

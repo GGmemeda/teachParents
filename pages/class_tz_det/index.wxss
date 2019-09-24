@@ -1,4 +1,7 @@
 /* pages/class_tz_det/index.wxss */
+.view-part{
+  padding-bottom: 88rpx;
+}
 .t1 {
   display: flex;
   padding: 40rpx 32rpx;
@@ -43,10 +46,9 @@
 .cimg {
   width: 32%;
   margin-top: 30rpx;
-  margin-right: 1.6%;
 }
 .cimg +.cimg{
-  margin-left: 32rpx;
+  margin-left: 11rpx;
 }
 
 .cimgcontent .cimg:nth-child(3n){
@@ -56,6 +58,7 @@
 .file {
   background-color: rgba(250, 250, 250, 1);
   padding: 0 40rpx;
+  padding-top: 32rpx;
 }
 
 .file .li {

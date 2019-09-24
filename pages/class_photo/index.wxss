@@ -68,8 +68,8 @@
 }
 
 .uploadImg {
-  width: 88rpx;
-  height: 88rpx;
+  width: 120rpx;
+  height: 120rpx;
   position: fixed;
   right: 32rpx;
   bottom: 32rpx;
@@ -88,6 +88,6 @@
   margin-bottom: 41rpx;
 }
 .uploadImg image{
-  width: 88rpx;
-  height: 88rpx;
+  width: 120rpx;
+  height: 120rpx;
 }

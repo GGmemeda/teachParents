@@ -1,6 +1,8 @@
 <!--pages/my_info/index.wxml-->
 <view class="info_content">
     <view class="info-wrapper">
+        <no-data wx:if="{{dataList.length<1}}" morentext="暂无数据！"></no-data>
+
         <view class="info_list {{!item.status?'withdrawn':''}}" wx:for="{{dataList}}" wx:key="{{index}}">
             <view class="il_center ">
                     <view class="tp1" bindtap="openDet"  data-id="{{item.id}}">
@@ -8,7 +10,7 @@
                         <text>{{item.time}}</text>
                     </view>
                     <view class="tp2"  bindtap="openDet"  data-id="{{item.id}}">
-                        {{item.content}}
+                        <text>{{item.content}}</text>
                     </view>
                 </view>
                 <view class="border-b border-b-s"></view>

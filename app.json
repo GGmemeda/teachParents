@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/students_list/index",
+    "pages/create_notice/index",
+    "pages/class_tz/index",
     "pages/homework_list/index",
+    "pages/homeword_receiver_List/index",
     "pages/all_homework/index",
     "pages/class_photo/index",
     "pages/receiver_List/index",
-    "pages/class_tz/index",
-    "pages/create_notice/index",
     "pages/results/index",
     "pages/class_det/index",
     "pages/classroom/index",
@@ -40,7 +40,10 @@
     "pages/sao_page/index",
     "pages/file_upload/index",
     "pages/choose_file/index",
-    "pages/notice/index"
+    "pages/notice/index",
+    "pages/class_photo_upload/index",
+    "pages/class_tz_det/index",
+    "pages/edit_notice/index"
   ],
   "permission": {
     "scope.userLocation": {

@@ -1,4 +1,4 @@
-// pages/receiver_List/index.js
+// pages/homeword_receiver_List/index.js
 let app = getApp();
 Page({
 
@@ -6,9 +6,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-        tabArr: ["未读", "已读"],
+        tabArr: ["已完成", "未完成"],
         unreadList: [],
-        navIndex:0
+        navIndex: 0
     },
 
     /**
@@ -16,7 +16,7 @@ Page({
      */
     onLoad: function (options) {
         this.setData({
-            noticeId: options.id
+            workId: options.id
         });
         this.getReadyData(options.id);
     },
@@ -30,17 +30,23 @@ Page({
     /**
      * 获取数据
      */
-    getReadyData(noticeId) {
+    getReadyData(workId) {
         // /GET wxtapi/msg/noReadNoticeList
         app.HTTP({
-            url: 'wxtapi/msg/noReadNoticeList',
+            url: 'wxtapi/homeWork/finishWorkList',
             method: 'GET',
             data: {
-                noticeId
+                workId
             }
         }).then(res => {
-            const data = res.result.list;
-            console.log(data);
+            const data = res.result;
+            data.map(item => {
+                if (item.url) {
+                    item.urlList = item.url.split(';');
+                } else {
+                    item.urlList = [];
+                }
+            });
             this.setData({
                 unreadList: data
             });
@@ -89,34 +95,35 @@ Page({
     },
     pageTabFun: function (e) {
         const navIndex = e.detail.index;
-        const noticeId = this.data.noticeId;
+        const workId = this.data.workId;
         this.setData({
             navIndex
-        })
-        if (index === 1) {
-            this.getReadList(noticeId);
+        });
+        console.log(navIndex);
+        if (navIndex === 1) {
+            this.getReadList(workId);
         } else {
-            this.getReadyData(noticeId);
+            this.getReadyData(workId);
         }
     },
-    getReadList(noticeId) {
+    getReadList(workId) {
         app.HTTP({
-            url: 'wxtapi/msg/readNoticeList',
+            url: 'wxtapi/homeWork/noFinishWorkList',
             method: 'GET',
             data: {
-                noticeId
+                workId
             }
         }).then(res => {
-            const data = res.result.list;
+            const data = res.result;
             this.setData({
                 unreadList: data
             });
         });
     },
-    setPhone:function (e) {
-        const phone=e.currentTarget.dataset.phone;
+    setPhone: function (e) {
+        const phone = e.currentTarget.dataset.phone;
         wx.makePhoneCall({
             phoneNumber: phone //仅为示例，并非真实的电话号码
-        })
+        });
     }
 });
