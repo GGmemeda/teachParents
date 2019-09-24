@@ -39,6 +39,11 @@
   text-align: justify;
   margin: 24rpx 0;
   line-height: 40rpx;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
 }
 
 .imglist {
