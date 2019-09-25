@@ -3,7 +3,7 @@
   <view style="padding-bottom: 30rpx">
     <image class="xsimg" mode="widthFix" src="/images/icon/noxsgoods.png"></image>
     <view class="notext">{{morentext}}</view>
-    <view wx:if="{{isshowbottom}}" bindtap="toBind" class="nodatabind cz angular">立即绑定</view>
+    <view wx:if="{{isshowbottom}}" bindtap="toBind" class="nodatabind cz angular">请登录</view>
     <view wx:if="{{isopenurl}}" bindtap="openUrl" class="nodatabind cz angular">{{urltext}}</view>
   </view>
 </view>

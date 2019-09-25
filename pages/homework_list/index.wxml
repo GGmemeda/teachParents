@@ -21,7 +21,7 @@
                             <image src="/images/homework/recall.png"></image>
                         </view>
                     </view>
-                    <view wx:if="{{!item.status}}">
+                    <view wx:if="{{!item.status}}" data-workid="{{item.workId}}" bindtap="toAddhomeWork" data-title="编辑作业">
                         <view class="operate-button" >
                             <image src="/images/homework/edit.png"></image>
                         </view>
@@ -33,6 +33,6 @@
             </view>
         </view>
     </view>
-    <view class="bottom-button cz angular" bindtap="submitBack">
+    <view class="bottom-button cz angular" bindtap="toAddhomeWork" data-title="布置作业">
         <text>布置作业</text></view>
 </view>

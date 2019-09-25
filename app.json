@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/homework/index",
     "pages/create_notice/index",
     "pages/class_tz/index",
     "pages/homework_list/index",

@@ -1,0 +1,43 @@
+<!--pages/my_help_center/index.wxml-->
+<!-- 输入框 -->
+<view class="titles">
+  <input class="border-b" bindinput="titleInput" value="{{title}}" placeholder="请填写标题标题(20字以内)"></input>
+</view>
+<view class="t1">
+  <textarea bindinput="textChange" value="{{val}}" maxlength="600" placeholder="请填写作业内容，600字以内"></textarea>
+  <view class="ct">{{lenText}}<text class="textmax">/600</text></view>
+</view>
+
+<view class="uploadimg">
+  <view class="imgcontent">
+    <view class="addimg" 
+          data-index="{{index}}" 
+          bindtap="changeImg" 
+          wx:for="{{adviceImgList}}" 
+          wx:key="{{index}}">
+      <image mode="aspectFill" wx:if="{{item.url}}" src="{{item.url}}"></image>
+      <text class="cloase" data-index="{{index}}" catchtap="deleteImg">×</text>
+    </view>
+    <view class="addimg" bindtap="selectImg"></view>
+  </view>
+</view>
+
+<view class="botom">
+  <view class="cantactphone border-b">
+    <view>需要家长确认作业完成</view>
+    <view><switch class="mini" checked="{{isswitch}}" bindchange="switch1Change"/></view>
+  </view>
+  <view class="cantactphone">
+    <view>选择确认完成的方式</view>
+    <view class="rightangu">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{arrayTj[index]}}
+        </view>
+      </picker>
+      <image class="tosi" mode="widthFix" src="/images/icon/to.png"></image>
+    </view>
+  </view>
+</view>
+
+<view class="cz angular" bindtap="submitBack"><text>确定</text></view>

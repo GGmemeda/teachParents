@@ -9,11 +9,17 @@ Page({
         homeworkList:[]
     },
 
+    toAddhomeWork(e) {
+      let ev = e.currentTarget.dataset;
+      wx.navigateTo({
+        url: `/pages/homework/index?title=${ev.title}&workid=${ev.workid}`
+      })
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.getAllHomeworkList();
     },
 
     /**
@@ -27,7 +33,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+      this.getAllHomeworkList();
     },
 
     /**
