@@ -53,7 +53,7 @@
 .sao-part{
   text-align: center;
   position: relative;
-  top: -20rpx;
+  top: -6rpx;
 }
 .sao-part image{
   width: 166rpx;

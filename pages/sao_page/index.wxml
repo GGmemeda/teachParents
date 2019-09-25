@@ -6,7 +6,7 @@
        <view class="image-part">
            <image src="/images/sao_page/down1.png"></image>
        </view>
-       <view class="last-address">www.yitiwanlian.com</view>
+       <view class="last-address">ytwl-sweep.yitiwanlian.com</view>
    </view>
     <view class="middle-arrow">
         <image src="/images/sao_page/line.png" alt=""></image>

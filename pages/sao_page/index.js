@@ -74,7 +74,7 @@ Page({
                 const token = wx.getStorageSync('token');
                 console.log(token);
                 wx.request({
-                    url: `${url}&token=${token}&type=/fileList`,
+                    url: `${url}&token=${token}&type=/fileList&key=teacher`,
                     method: "GET",
                     success(res) {
                         if (res.data && res.data.status == 200) {
